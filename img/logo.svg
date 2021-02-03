@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342.428570601405" height="236.57142854710014"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" class="" style=""/>
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g style="">
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="238" width="391" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_1"/>
+  </g>
+ </g>
+ <g style="" class="currentLayer">
+  <title>Layer 1</title>
+  <polyline stroke="#000" stroke-linecap="round" id="svg_4" points="128.56182861328125,103.77368927001953 128.56182861328125,103.77368927001953 128.56182861328125,103.77368927001953 " stroke-opacity="null" stroke-width="1.5" fill="none" class=""/>
+  <rect stroke="#ffffff" id="svg_5" height="221.99998474121094" width="220" y="5.80748987197876" x="12.078740119934082" stroke-width="1.5" fill="#00ffff" class=""/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="227.84059143066406" x2="151.6787567138672" y1="227.84059143066406" x1="9.678730010986328" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none" class=""/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_9" y2="107.47342681884766" x2="20.903369903564453" y1="229.69566345214844" x1="12.207710266113281" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none" class=""/>
+  <line stroke="#000" transform="rotate(-11.067207336425781 142.40095520019497,169.0676269531251) " stroke-linecap="null" stroke-linejoin="null" id="svg_14" y2="107.34330749511719" x2="147.36720275878906" y1="230.79197692871094" x1="137.4346923828125" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none" class=""/>
+  <ellipse stroke="#000000" ry="28.2608699798584" rx="29.71014976501465" id="svg_19" cy="99.98551940917969" cx="78.14974212646484" fill-opacity="null" stroke-width="5" fill="none" class=""/>
+  <rect id="svg_20" height="59.90338134765625" width="90.82125854492188" y="94.42996215820312" x="33.94683837890625" stroke-opacity="0" stroke-width="1.5" stroke="#ffffff" fill="#00ffff" class=""/>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_15" y2="109" x2="137.66908264160156" y1="109" x1="18.374380111694336" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none" class=""/>
+  <rect id="svg_22" height="0.48309001326560974" width="0" y="111.33818054199219" x="173.07728576660156" stroke-opacity="0" stroke-width="1.5" stroke="#ffffff" fill="#00ffff" class=""/>
+  <text stroke="#ffffff" transform="matrix(1.1169601678848267,0,0,1.0295794010162354,-27.651942191645503,-6.6673818603158) " font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="Poppins" font-size="52" id="svg_24" y="89.32483040324715" x="131.53595629148768" stroke-width="0" fill="#000000" class="">Patisport</text>
+  <line stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_25" y2="105.53553652763367" x2="326.2129299884947" y1="105.53553652763367" x1="165.29985399631755" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none" class=""/>
+ </g>
+<style xmlns="http://www.w3.org/1999/xhtml">@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);</style></svg>
