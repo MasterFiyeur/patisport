@@ -15,7 +15,7 @@
     box-sizing: border-box;
 }
 
-.nav_id{
+.nav_header{
     z-index: 1099;
     position: fixed;
     top: 0;
@@ -29,11 +29,11 @@
     border-bottom: thin solid var(--color-blue-cyan);
 }
 
-.nav_id img{
+.nav_header img{
     height: 80px;
 }
 
-.nav_id .logo_nom{
+.nav_header .logo_nom{
     width: 100%;
     display: flex;
     align-self: center;
@@ -41,20 +41,20 @@
     justify-content: space-between;
 }
 
-.nav_id .logo_nom div{
+.nav_header .logo_nom div{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.nav_id .nav_menu{
+.nav_header .nav_menu{
     display: flex;
     align-items: flex-end;
     justify-content: center;
 
 }
 
-.nav_id .nav_menu a{
+.nav_header .nav_menu a{
     text-decoration: none;
     color: #000;
     padding: 7px 20px;
@@ -62,16 +62,75 @@
     border-top-right-radius: 5px;
 }
 
-.nav_id .nav_menu a:hover{
+.nav_header .nav_menu a:hover{
     background: linear-gradient(var(--color-blue-dark) 0%, var(--color-blue-cyan) 100%)!important;
     color: #fff;
 }
 
-.footer{
+.milieu{
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: 140px;
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.vertical,
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vertical{
+    width: 100%;
+    max-width: 350px;
+    min-height: 100%;
+    border-right: thin solid aqua;
+}
+
+.vertical svg{
+    padding: 20px;
+    width: 40px;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+}
+
+.content img{
+    height: 100%;
+    max-height: 237px;
+    width: 100%;
+    max-width: 343px;
+}
+
+.content div{
+    margin-top: 30px;
+}
+
+footer{
+    font-size: 13px;
     padding: 30px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background: linear-gradient(to right, #fff 25%, var(--color-blue-cyan));
     border-top: thin solid var(--color-blue-cyan);
+}
+
+.legales,
+.legales div,
+.copyright{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }

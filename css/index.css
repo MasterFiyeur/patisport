@@ -1,8 +1,5 @@
-.nav_id .nav_menu a:nth-child(1){
+.nav_header .nav_menu a:nth-child(1){
     border: thin solid var(--color-blue-dark);
 }
 
-.content{
-    padding-top: 170px;
-    min-height: 100vh;
-}
+
