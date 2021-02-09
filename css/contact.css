@@ -1,3 +1,7 @@
 .nav_header .nav_menu a:nth-child(5){
     border: thin solid var(--color-blue-dark);
 }
+
+.content{
+    background: black;
+}
