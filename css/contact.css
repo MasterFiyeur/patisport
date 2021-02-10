@@ -15,5 +15,96 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+.formulaire_contact{
+    width: 100%;
+    height: 100%;
+    color: aqua;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulaire_contact h2{
+    margin: 20px;
+}
+
+.formulaire_contact form{
+    width: 100%;
+    margin-bottom: 20px;
+    transition: .5s;
+    position: relative;
+}
+
+.formulaire_contact .inputBox{
+    position: relative;
+    height: 40px;
+    margin: 30px 0;
+    margin-left: 10%;
+    width: 80%;
+    color: aqua;
+}
+
+.formulaire_contact .inputBox input,
+.formulaire_contact .inputBox select,
+.formulaire_contact .inputBox textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid aqua;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    transition: .5s;
+    z-index: 1;
+}
+
+.formulaire_contact .inputBox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+}
+
+.formulaire_contact .inputBox input:focus ~ label,
+.formulaire_contact .inputBox input:valid ~ label,
+.formulaire_contact .inputBox select:focus ~ label,
+.formulaire_contact .inputBox select:valid ~ label,
+.formulaire_contact .inputBox textarea:focus ~ label,
+.formulaire_contact .inputBox textarea:valid ~ label{
+    top: -35px;
+    left: -10px;
+    font-size: 15px;
+}
+
+.formulaire_contact .inputBox input:focus,
+.formulaire_contact .inputBox input:valid,
+.formulaire_contact .inputBox select:focus,
+.formulaire_contact .inputBox select:valid,
+.formulaire_contact .inputBox textarea:focus,
+.formulaire_contact .inputBox textarea:valid{
+    background: aqua;
+}
+
+.formulaire_contact .inputBox.textarea{
+    position: relative;
+    height: 100px;
+    resize: none;
+}
+
+.formulaire_contact .inputBox.textarea textarea{
+    resize: none;
+}
+
