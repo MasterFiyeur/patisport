@@ -1,0 +1,114 @@
+.content{
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.carte{
+    margin: 20px;
+    position: relative;
+    width: 280px;
+    height: 380px;
+    background: #A5A5A5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carte::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: aqua;
+    transform: skewY(345deg);
+    transition: .5s;
+}
+
+.carte:hover::before{
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.carte::after{
+    content: 'Patisport';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    font-weight: 600;
+    font-size: 110px;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.carte .imageBox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.carte .imageBox img{
+    object-fit: cover;
+    max-width: 100%;
+    transition: .5s;
+}
+
+.carte:hover .imageBox img{
+    max-width: 70%;
+}
+
+.carte .contentBox{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.carte .contentBox h3{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carte .contentBox .prix{
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.carte .contentBox .btn_acheter{
+    cursor: pointer;
+    position: relative;
+    top: 200px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #fff;
+    background: aqua;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+.carte .contentBox .btn_acheter:hover{
+    background: rgba(0, 255, 255, 0.7);
+}
+
+.carte:hover .contentBox .btn_acheter{
+    top: 0;
+    opacity: 1;
+}
