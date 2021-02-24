@@ -71,7 +71,7 @@
     height: 100%;
     padding-top: 140px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
 }
 

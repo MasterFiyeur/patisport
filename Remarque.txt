@@ -1,0 +1,6 @@
+Zoom sur image du produit
+Contact - type date bug HTML5 (fonction js verif)
+Mettre le menu de gauche en haut et pas au milieu
+Nom fichier : ING1GI1_Dabrowski_Alan_Julien_Theo.zip
+Responsive
+Ajouter numéro de tel
