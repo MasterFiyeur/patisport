@@ -157,6 +157,10 @@
     text-align: center;
 }
 
+.carte .contentBox .hidden_contentBox .stock.hide_stock{
+    display: none;
+}
+
 .carte .contentBox .hidden_contentBox .gestion_stock{
     display: flex;
     justify-content: space-evenly;

@@ -1,11 +1,14 @@
 function stock_switch(){
     var src_image = document.getElementById("toggle_stock");
+    var stocks = document.getElementsByClassName("stock");
     if(src_image.getAttribute("src")=="./img/produits/show.svg"){
-
         src_image.setAttribute("src","./img/produits/hide.svg");
     }else{
-
         src_image.setAttribute("src","./img/produits/show.svg");
+    }
+    for (let index = 0; index < stocks.length; index++) {
+        let element = stocks[index];
+        element.classList.toggle("hide_stock");
     }
 }
 
