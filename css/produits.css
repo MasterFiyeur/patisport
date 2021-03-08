@@ -5,13 +5,47 @@
     align-items: center;   
     flex-wrap: wrap;
     flex-direction: row;
+    border: none;
+}
+
+.display_block{
+    display: block;
+    border-left: thin solid aqua;
+}
+
+.btn_stock-switch{
+    z-index: 2;
+    margin: 0 10px 10px 0;
+    position: sticky;
+    bottom: 5px;
+    float: right;
+    cursor: pointer;
+    padding: 10px 30px;
+    color: #fff;
+    background: aqua;
+    border: thin solid rgba(0, 200, 200, 1);
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_stock-switch:hover{
+    background: rgba(0, 200, 200, 1);
+}
+
+.btn_stock-switch img{
+    filter: invert(1);
+    width: 100%;
 }
 
 .carte{
     margin: 20px;
     position: relative;
     width: 280px;
-    height: 380px;
+    height: 430px;
     background: #A5A5A5;
     border-radius: 20px;
     overflow: hidden;
@@ -57,10 +91,11 @@
     object-fit: cover;
     max-width: 100%;
     transition: .5s;
+    max-width: 70%;
 }
 
 .carte:hover .imageBox img{
-    max-width: 70%;
+    transform: scale(1.5);
 }
 
 .carte .contentBox{
@@ -94,7 +129,7 @@
     top: 200px;
     opacity: 0;
     padding: 10px 30px;
-    margin-top: 15px;
+    margin-top: 10px;
     color: #fff;
     background: aqua;
     border: none;
