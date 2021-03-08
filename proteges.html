@@ -89,7 +89,17 @@
                         <div class="contentBox">
                             <h3>Protèges lames verts</h3>
                             <h2 class="prix">€9.99</h2>
-                            <button class="btn_acheter">Acheter</button>
+                            <div class="hidden_contentBox">
+                                <form action="">
+                                    <div class="stock">Stock : 9</div>
+                                    <div class="gestion_stock">
+                                        <div class="plus_stock" onclick="add_stock(0)">+</div>
+                                        <input type="text" name="nombre_produit" id="nombre_produit" value="0" disabled>
+                                        <div class="moins_stock" onclick="del_stock(0)">-</div>
+                                    </div>
+                                    <button class="btn_acheter">Acheter</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="carte">
@@ -133,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn_stock-switch" onclick="stock_switch(this)"><img id="toggle_stock" src="./img/produits/show.svg"></button>
+                <button class="btn_stock-switch" onclick="stock_switch()"><img id="toggle_stock" src="./img/produits/show.svg"></button>
             </div>
         </div>
     </main>
