@@ -66,6 +66,11 @@
     z-index: 1;
 }
 
+.formulaire_contact .inputBox .wrong{
+    background: red!important;
+    border-bottom: 2px solid red!important;
+}
+
 .formulaire_contact .inputBox label{
     position: absolute;
     top: 0;
@@ -144,7 +149,7 @@
     color: #000;
 }
 
-.formulaire_contact input[type="submit"]{
+.formulaire_contact input[type="button"]{
     cursor:pointer;
     border-radius: 15px;
     padding: 10px 15px;
@@ -152,10 +157,10 @@
     border: none;
 }
 
-.formulaire_contact input[type="submit"]:hover{
+.formulaire_contact input[type="button"]:hover{
     background-color: rgb(0, 255, 255);
 }
 
-.formulaire_contact input[type="submit"]:active{
+.formulaire_contact input[type="button"]:active{
     background-color: #fff;
 }
