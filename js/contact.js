@@ -57,7 +57,7 @@ function verification_contact(){
     }else{
         prenom.classList.remove("wrong");
     }
-    let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let regex = /\S+@\S+\.\S+/;
     if(!regex.test(String(email.value).toLowerCase())){
         ok=false;
         email.classList.add("wrong");

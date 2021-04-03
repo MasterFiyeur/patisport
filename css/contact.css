@@ -85,10 +85,13 @@
 
 .formulaire_contact .inputBox input:focus ~ label,
 .formulaire_contact .inputBox input:valid ~ label,
+.formulaire_contact .inputBox input:invalid ~ label,
 .formulaire_contact .inputBox select:focus ~ label,
 .formulaire_contact .inputBox select:valid ~ label,
+.formulaire_contact .inputBox select:invalid ~ label,
 .formulaire_contact .inputBox textarea:focus ~ label,
-.formulaire_contact .inputBox textarea:valid ~ label{
+.formulaire_contact .inputBox textarea:valid ~ label,
+.formulaire_contact .inputBox textarea:invalid ~ label{
     top: -35px;
     left: -10px;
     font-size: 15px;
