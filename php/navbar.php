@@ -8,7 +8,7 @@ echo '<header class="nav_header">
             Bienvenue dans la boutique Patisport
         </div>
         <div class="nav_buttons">
-            <a href="#">Connexion</a>
+            <a href="connexion.php">Connexion</a>
             <a href="#">Panier</a>
         </div>
     </div>
