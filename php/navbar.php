@@ -14,9 +14,9 @@ echo '<header class="nav_header">
     </div>
     <div class="nav_menu">
         <a href="index.php">Accueil</a>
-        <a href="lacets.php">Lacets</a>
-        <a href="proteges.php">Protèges lames</a>
-        <a href="patins.php">Patins</a>
+        <a href="produits.php?categorie=lacets">Lacets</a>
+        <a href="produits.php?categorie=proteges">Protèges lames</a>
+        <a href="produits.php?categorie=patins">Patins</a>
         <a href="contact.php">Contactez-nous</a>
     </div>
 </header>';

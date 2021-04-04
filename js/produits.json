@@ -1,0 +1,82 @@
+[{
+    "categories": ["lacets", "proteges", "patins"]
+}, {
+    "lacets": [{
+        "img": "src=\".\/img\/produits\/lacets\/lacet1.png\" alt=\"Lacets jaunes\"",
+        "stock": 9,
+        "label": "Lacets jaunes",
+        "prix": 6.99
+    }, {
+        "img": "src=\".\/img\/produits\/lacets\/lacet2.png\" alt=\"Lacets bleus\"",
+        "stock": 9,
+        "label": "Lacets bleus",
+        "prix": 6.99
+    }, {
+        "img": "src=\".\/img\/produits\/lacets\/lacet3.png\" alt=\"Lacets verts\"",
+        "stock": 9,
+        "label": "Lacets verts",
+        "prix": 6.99
+    }, {
+        "img": "src=\".\/img\/produits\/lacets\/lacet4.png\" alt=\"Lacets rouges\"",
+        "stock": 9,
+        "label": "Lacets rouges",
+        "prix": 6.99
+    }, {
+        "img": "src=\".\/img\/produits\/lacets\/lacet5.png\" alt=\"Lacets roses\"",
+        "stock": 9,
+        "label": "Lacets roses",
+        "prix": 6.99
+    }],
+    "proteges": [{
+        "img": "src=\".\/img\/produits\/proteges\/protege1.png\" alt=\"Prot\u00e8ges lames verts\"",
+        "stock": 9,
+        "label": "Prot\u00e8ges lames verts",
+        "prix": 9.99
+    }, {
+        "img": "src=\".\/img\/produits\/proteges\/protege2.png\" alt=\"Prot\u00e8ges lames jaunes\"",
+        "stock": 9,
+        "label": "Prot\u00e8ges lames jaunes",
+        "prix": 9.99
+    }, {
+        "img": "src=\".\/img\/produits\/proteges\/protege3.png\" alt=\"Prot\u00e8ges lames bleus\"",
+        "stock": 9,
+        "label": "Prot\u00e8ges lames bleus",
+        "prix": 9.99
+    }, {
+        "img": "src=\".\/img\/produits\/proteges\/protege4.png\" alt=\"Prot\u00e8ges lames blancs\"",
+        "stock": 9,
+        "label": "Prot\u00e8ges lames blancs",
+        "prix": 9.99
+    }, {
+        "img": "src=\".\/img\/produits\/proteges\/protege5.png\" alt=\"Prot\u00e8ges lames roses\"",
+        "stock": 9,
+        "label": "Prot\u00e8ges lames roses",
+        "prix": 9.99
+    }],
+    "patins": [{
+        "img": "src=\".\/img\/produits\/patins\/patin1.png\" alt=\"Patins motifs jaunes\"",
+        "stock": 9,
+        "label": "Patins motifs jaunes",
+        "prix": 34.99
+    }, {
+        "img": "src=\".\/img\/produits\/patins\/patin2.png\" alt=\"Patins motifs gris\"",
+        "stock": 9,
+        "label": "Patins motifs gris",
+        "prix": 34.99
+    }, {
+        "img": "src=\".\/img\/produits\/patins\/patin3.png\" alt=\"Patins \u00e0 fourrure\"",
+        "stock": 9,
+        "label": "Patins \u00e0 fourrure",
+        "prix": 42.99
+    }, {
+        "img": "src=\".\/img\/produits\/patins\/patin4.png\" alt=\"Patins classiques\"",
+        "stock": 9,
+        "label": "Patins classiques",
+        "prix": 40.99
+    }, {
+        "img": "src=\".\/img\/produits\/patins\/patin5.png\" alt=\"Patins motif bleu\"",
+        "stock": 9,
+        "label": "Patins motif bleu",
+        "prix": 44.99
+    }]
+}]

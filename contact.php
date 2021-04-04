@@ -1,5 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+    /* Vérification formulaire */
+    if(!empty($_POST)){
+        $wrong = array();
+        $valid = true;
+        $metiers = array("agriculture","agroalimentaire","animaux","architecture","artisanat","banque","batiment","biologie","commerce","communication","culture","defense","droit","edition","informatique","enseignement","environnement","gestion","hotellerie","humanitaire","industrie","lettres","mecanique","numerique","sante","sciences","secretariat","social","soins","sport","transport","autre");
+        if(!isset($_POST["nom"]) || trim($_POST["nom"])==""){
+            $valid = false;
+            array_push($wrong,"nom");
+        }
+        if(!isset($_POST["prenom"]) || trim($_POST["prenom"])==""){
+            $valid = false;
+            array_push($wrong,"prenom");
+        }
+        if (!isset($_POST["mail"]) || preg_match("/^\S+@\S+\.\S+$/", $_POST["mail"])==0){
+            $valid = false;
+            array_push($wrong,"mail");
+        }
+        if(isset($_POST["ddn"])){
+            $ddn = new DateTime($_POST["ddn"]);
+            $ddnMin = new DateTime("01-01-1900");
+            $ddnMax = new DateTime("NOW");
+            if(!($ddn >= $ddnMin) || !($ddn < $ddnMax)){
+                $valid = false;
+                array_push($wrong,"ddn");
+            }
+        }else{
+            $valid = false;
+            array_push($wrong,"ddn");
+        }
+        if(!isset($_POST["metier"]) || !(in_array($_POST["metier"],$metiers))){
+            $valid = false;
+            array_push($wrong,"metier");
+        }
+        if(!isset($_POST["sujet"]) || trim($_POST["sujet"])==""){
+            $valid = false;
+            array_push($wrong,"sujet");
+        }
+        if(!isset($_POST["contenu"]) || trim($_POST["contenu"])==""){
+            $valid = false;
+            array_push($wrong,"contenu");
+        }
+        if(!isset($_POST["sexe"]) || !(in_array($_POST["sexe"],array("homme","femme")))){
+            $valid = false;
+            array_push($wrong,"sexe");
+        }
+    }
+?>
 <head>
     <?php 
         include "./php/header.php";
@@ -19,7 +67,18 @@
                 <div class="black-back"></div>
                 <div class="formulaire_contact">
                     <h2>Nous contacter</h2>
-                    <form id="contact_form" action="mailto:julientheo@eisti.eu" method="POST">
+                    <?php
+                        if(!empty($_POST) && $valid){
+                            $to      = 'julientheo@eisti.eu';
+                            $subject = $_POST["sujet"];
+                            $message = $_POST["contenu"];
+                            $message .= "\n De : ".$_POST["prenom"]." ".$_POST["nom"]." <".$_POST["mail"].">";
+                            $message .= "\n".$_POST["ddn"]." - ".$_POST["metier"]." - ".$_POST["sexe"];
+                            mail($to, $subject, $message);
+                            echo "<h5>Votre mail a bien été envoyé !</h5>";
+                        }
+                    ?>
+                    <form id="contact_form" action="contact.php" method="POST">
                         <!-- Nom, Prénom, email, genre, métier(select), date naissance, sujet et contenu du mail -->
                         <!--Genre-->
                         <div class="inputBox">
@@ -111,6 +170,74 @@
             </div>
         </div>
         <script type="text/javascript" src="./js/contact.js"></script>
+        <?php 
+            if(isset($valid) && !$valid){
+                var_dump($wrong);
+                $good = array_diff(array("nom","prenom","mail","ddn","metier","sujet","contenu"), $wrong);
+                var_dump($good);
+
+                echo "<script>
+                let good = [\"".implode("\",\"", $good)."\"];
+                let wrong = [\"".implode("\",\"", $wrong)."\"];
+                for (let index = 0; index < wrong.length; index++) {
+                    switch (wrong[index]) {
+                        case 'nom':
+                            document.getElementById('nom').classList.add('wrong');
+                            break;
+                        case 'prenom':
+                            document.getElementById('prenom').classList.add('wrong');
+                            break;
+                        case 'mail':
+                            document.getElementById('mail').classList.add('wrong');
+                            break;
+                        case 'ddn':
+                            document.getElementById('ddn').classList.add('wrong');
+                            break;
+                        case 'metier':
+                            document.getElementById('metier').classList.add('wrong');
+                            break;
+                        case 'sujet':
+                            document.getElementById('sujet').classList.add('wrong');
+                            break;
+                        case 'contenu':
+                            document.getElementById('contenu').classList.add('wrong');
+                            break;                
+                        default:
+                            console.log('Le formulaire est bon');
+                            break;
+                    }
+                }
+                for (index = 0; index < good.length; index++) {
+                    switch (good[index]) {
+                        case 'nom':
+                            document.getElementById('nom').value = '".$_POST["nom"]."';
+                            break;
+                        case 'prenom':
+                            document.getElementById('prenom').value = '".$_POST["prenom"]."';
+                            break;
+                        case 'mail':
+                            document.getElementById('mail').value = '".$_POST["mail"]."';
+                            break;
+                        case 'ddn':
+                            document.getElementById('ddn').value = '".$_POST["ddn"]."';
+                            break;
+                        case 'metier':
+                            document.getElementById('metier').value = '".$_POST["metier"]."';
+                            break;
+                        case 'sujet':
+                            document.getElementById('sujet').value = '".$_POST["sujet"]."';
+                            break;
+                        case 'contenu':
+                            document.getElementById('contenu').value = '".$_POST["contenu"]."';
+                            break;                
+                        default:
+                            console.log('Le formulaire est bon');
+                            break;
+                    }
+                }
+            </script>";
+            }
+        ?>
     <footer>
 </body>
 </html>

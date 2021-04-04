@@ -5,8 +5,8 @@ echo '<div class="vertical">
     <a href="contact.html">Contact</a>
     <img src="./img/flocon.svg" alt="flocon">
     <h3>Produits</h3>
-    <a href="lacets.html">Lacets</a>
-    <a href="proteges.html">Protèges lames</a>
-    <a href="patins.html">Patins</a>
+    <a href="produits.php?categorie=lacets">Lacets</a>
+    <a href="produits.php?categorie=proteges">Protèges lames</a>
+    <a href="produits.php?categorie=patins">Patins</a>
 </div>';
 ?>

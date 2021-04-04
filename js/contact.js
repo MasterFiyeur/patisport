@@ -44,14 +44,13 @@ function verification_contact(){
         "transport",
         "autre"
     ];
-
-    if(nom.textContent.replace(/\s/g, "") == ""){
+    if(nom.value.trim() == ""){
         ok=false;
         nom.classList.add("wrong");
     }else{
         nom.classList.remove("wrong");
     }
-    if(prenom.textContent.replace(/\s/g, "") == ""){
+    if(prenom.value.trim() == ""){
         ok=false;
         prenom.classList.add("wrong");
     }else{
