@@ -182,4 +182,15 @@
     height: 25px;
     background-color: aqua;
     border-radius: 50%;
+    border: none;
+}
+
+.carte .contentBox .hidden_contentBox .gestion_stock .plus_stock:hover,
+.carte .contentBox .hidden_contentBox .gestion_stock .moins_stock:hover{
+    background-color: rgb(0, 200, 200);
+}
+
+.carte .contentBox .hidden_contentBox .gestion_stock .plus_stock:active,
+.carte .contentBox .hidden_contentBox .gestion_stock .moins_stock:active{
+    background-color: rgb(0,  150, 150);
 }

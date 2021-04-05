@@ -22,13 +22,13 @@
                         <div class="cart-info">
                             <img src="./img/produits/lacets/lacet1" alt="lacet1">
                             <div>
-                                <p>Lacets 1</p>
+                                <p>Lacets 1 - La1</p>
                                 <small>Prix : €5.00</small><br>
                                 <a href="">Supprimer</a>
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" min=0 value="1"></td>
                     <td>€50.00</td>
                 </tr>
                 <tr>
@@ -36,13 +36,13 @@
                         <div class="cart-info">
                             <img src="./img/produits/lacets/lacet2" alt="lacet1">
                             <div>
-                                <p>Lacets 2</p>
+                                <p>Lacets 2 - La2</p>
                                 <small>Prix : €5.00</small><br>
                                 <a href="">Supprimer</a>
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" min=0 value="1"></td>
                     <td>€50.00</td>
                 </tr>
                 <tr>
@@ -50,13 +50,13 @@
                         <div class="cart-info">
                             <img src="./img/produits/lacets/lacet3" alt="lacet1">
                             <div>
-                                <p>Lacets 3</p>
+                                <p>Lacets 3 - La3</p>
                                 <small>Prix : €5.00</small><br>
                                 <a href="">Supprimer</a>
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" min=0 value="1"></td>
                     <td>€50.00</td>
                 </tr>
             </table>
