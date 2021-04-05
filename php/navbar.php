@@ -9,7 +9,7 @@ echo '<header class="nav_header">
         </div>
         <div class="nav_buttons">
             <a href="connexion.php">Connexion</a>
-            <a href="#">Panier</a>
+            <a href="panier.php">Panier</a>
         </div>
     </div>
     <div class="nav_menu">

@@ -1,0 +1,97 @@
+main{
+    min-height: 61.3vh;
+    margin-top: 140px;
+    margin-left: 25px;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart h1{
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    text-decoration: underline;
+}
+
+table{
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.cart-info{
+    display: flex;
+    flex-direction: row;
+    color: #888;
+}
+
+tr th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: cyan;
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;;
+}
+
+tr td input{
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a{
+    text-decoration: none;
+    color: cyan;
+    font-size: 12px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+td:last-child,
+th:last-child{
+    text-align: right;
+}
+
+.total-prix{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.total-prix table{
+    border-top: 3px solid cyan;
+    max-width: 400px;
+}
+
+@media screen and (max-width: 732px){
+    main{
+        margin-top: 226px;
+    }
+}
+
+@media screen and (max-width: 616px){
+    main{
+        margin-top: 264px;
+    }
+}
+
+@media screen and (max-width: 356px){
+    main{
+        margin-top: 302px;
+    }
+}
