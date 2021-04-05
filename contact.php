@@ -156,88 +156,77 @@
             </div>
         </div> 
     </main>
-    <footer>
-        <!-- Mentions légales + contacts -->
-        <div class="copyright">&copy;Patisport - 2021<br/>Alan Dabrowski & Théo Julien</div>
-        <div class="legales">
-            <div>
-                <b>19 rue du projet d'informatique<br/>
-                95000, Cergy, Société Patisport</b>
-                Webmasters : M. Dabrowski et M. Julien<br/>
-                01 00 00 00 00<br/>
-                <a href="mailto:alan.dabrowski@eisti.fr">alan.dabrowski@eisti.fr</a>
-                <a href="mailto:theo.julien@eisti.fr">theo.julien@eisti.fr</a>
-            </div>
-        </div>
-        <script type="text/javascript" src="./js/contact.js"></script>
-        <?php 
-            if(isset($valid) && !$valid){
-                var_dump($wrong);
-                $good = array_diff(array("nom","prenom","mail","ddn","metier","sujet","contenu"), $wrong);
-                var_dump($good);
+    <?php
+        include './php/footer.php';
+    ?>
+    <script type="text/javascript" src="./js/contact.js"></script>
+    <?php 
+        if(isset($valid) && !$valid){
+            var_dump($wrong);
+            $good = array_diff(array("nom","prenom","mail","ddn","metier","sujet","contenu"), $wrong);
+            var_dump($good);
 
-                echo "<script>
-                let good = [\"".implode("\",\"", $good)."\"];
-                let wrong = [\"".implode("\",\"", $wrong)."\"];
-                for (let index = 0; index < wrong.length; index++) {
-                    switch (wrong[index]) {
-                        case 'nom':
-                            document.getElementById('nom').classList.add('wrong');
-                            break;
-                        case 'prenom':
-                            document.getElementById('prenom').classList.add('wrong');
-                            break;
-                        case 'mail':
-                            document.getElementById('mail').classList.add('wrong');
-                            break;
-                        case 'ddn':
-                            document.getElementById('ddn').classList.add('wrong');
-                            break;
-                        case 'metier':
-                            document.getElementById('metier').classList.add('wrong');
-                            break;
-                        case 'sujet':
-                            document.getElementById('sujet').classList.add('wrong');
-                            break;
-                        case 'contenu':
-                            document.getElementById('contenu').classList.add('wrong');
-                            break;                
-                        default:
-                            console.log('Le formulaire est bon');
-                            break;
-                    }
+            echo "<script>
+            let good = [\"".implode("\",\"", $good)."\"];
+            let wrong = [\"".implode("\",\"", $wrong)."\"];
+            for (let index = 0; index < wrong.length; index++) {
+                switch (wrong[index]) {
+                    case 'nom':
+                        document.getElementById('nom').classList.add('wrong');
+                        break;
+                    case 'prenom':
+                        document.getElementById('prenom').classList.add('wrong');
+                        break;
+                    case 'mail':
+                        document.getElementById('mail').classList.add('wrong');
+                        break;
+                    case 'ddn':
+                        document.getElementById('ddn').classList.add('wrong');
+                        break;
+                    case 'metier':
+                        document.getElementById('metier').classList.add('wrong');
+                        break;
+                    case 'sujet':
+                        document.getElementById('sujet').classList.add('wrong');
+                        break;
+                    case 'contenu':
+                        document.getElementById('contenu').classList.add('wrong');
+                        break;                
+                    default:
+                        console.log('Le formulaire est bon');
+                        break;
                 }
-                for (index = 0; index < good.length; index++) {
-                    switch (good[index]) {
-                        case 'nom':
-                            document.getElementById('nom').value = '".$_POST["nom"]."';
-                            break;
-                        case 'prenom':
-                            document.getElementById('prenom').value = '".$_POST["prenom"]."';
-                            break;
-                        case 'mail':
-                            document.getElementById('mail').value = '".$_POST["mail"]."';
-                            break;
-                        case 'ddn':
-                            document.getElementById('ddn').value = '".$_POST["ddn"]."';
-                            break;
-                        case 'metier':
-                            document.getElementById('metier').value = '".$_POST["metier"]."';
-                            break;
-                        case 'sujet':
-                            document.getElementById('sujet').value = '".$_POST["sujet"]."';
-                            break;
-                        case 'contenu':
-                            document.getElementById('contenu').value = '".$_POST["contenu"]."';
-                            break;                
-                        default:
-                            console.log('Le formulaire est bon');
-                            break;
-                    }
-                }
-            </script>";
             }
-        ?>
-    <footer>
+            for (index = 0; index < good.length; index++) {
+                switch (good[index]) {
+                    case 'nom':
+                        document.getElementById('nom').value = '".$_POST["nom"]."';
+                        break;
+                    case 'prenom':
+                        document.getElementById('prenom').value = '".$_POST["prenom"]."';
+                        break;
+                    case 'mail':
+                        document.getElementById('mail').value = '".$_POST["mail"]."';
+                        break;
+                    case 'ddn':
+                        document.getElementById('ddn').value = '".$_POST["ddn"]."';
+                        break;
+                    case 'metier':
+                        document.getElementById('metier').value = '".$_POST["metier"]."';
+                        break;
+                    case 'sujet':
+                        document.getElementById('sujet').value = '".$_POST["sujet"]."';
+                        break;
+                    case 'contenu':
+                        document.getElementById('contenu').value = '".$_POST["contenu"]."';
+                        break;                
+                    default:
+                        console.log('Le formulaire est bon');
+                        break;
+                }
+            }
+        </script>";
+        }
+    ?>
 </body>
 </html>
