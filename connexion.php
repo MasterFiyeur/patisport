@@ -14,7 +14,10 @@
                 <div class="form">
                     <h2>Connexion</h2>
                     <?php
-                        if(isset($_SESSION["user"])){
+                        if(isset($_SESSION["user"]) && isset($_GET["deconnexion"]) && $_GET["deconnexion"]=="yes"){
+                            session_destroy();
+                            header("Location: connexion.php");
+                        }elseif(isset($_SESSION["user"])){
                             header("Location: index.php"); 
                         }elseif(!empty($_POST["username"]) && !empty($_POST["password"])){
                             $data = file_get_contents("./js/users.xml");
@@ -23,7 +26,7 @@
                                 $_SESSION["user"]=$_POST["username"];
                                 header("Location: index.php");
                             }else{
-                                echo "<div>Nom d'utilisateur ou mot de passe incorrect.</div>";
+                                echo "<small>Nom d'utilisateur ou mot de passe incorrect.</small>";
                             }
                         }
                     ?>

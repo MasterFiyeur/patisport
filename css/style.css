@@ -64,13 +64,15 @@
     border-radius: 5px;
 }
 
-.nav_header .nav_buttons a{
+.nav_header .nav_buttons a,
+.nav_header .nav_buttons input[type=submit]{
     box-shadow: 1px 1px 3px blue;
     margin-left: 5px;
 }
 
 .nav_header .nav_menu a,
-.nav_header .nav_buttons a{
+.nav_header .nav_buttons a,
+.nav_header .nav_buttons input[type=submit]{
     text-decoration: none;
     color: #000;
     padding: 7px 20px;
@@ -78,8 +80,14 @@
     border-top-right-radius: 5px;
 }
 
+.nav_header .nav_buttons input[type=submit]{
+    background: transparent;
+    border: none;
+}
+
 .nav_header .nav_menu a:hover,
-.nav_header .nav_buttons a:hover{
+.nav_header .nav_buttons a:hover,
+.nav_header .nav_buttons input[type=submit]:hover{
     background: linear-gradient(var(--color-blue-dark) 0%, var(--color-blue-cyan) 100%)!important;
     color: #fff;
 }

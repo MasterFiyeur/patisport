@@ -58,6 +58,10 @@
     margin-bottom: 30px;
 }
 
+.box .form small{
+    font-size: 11px;
+}
+
 .box .form .inputBx{
     position: relative;
     width: 100%;

@@ -19,12 +19,12 @@ function add_stock(forms_nombre){
         nombre +=1;
         document.forms[forms_nombre].nombre_produit.value = nombre;
         if(nombre==1){
-            document.getElementsByClassName("moins_stock")[forms_nombre].style.pointerEvents = "auto";
+            document.getElementsByClassName("moins_stock")[forms_nombre-1].style.pointerEvents = "auto";
         }
     }
     if(nombre==max_nombre){
         console.log("maximum");
-        document.getElementsByClassName("plus_stock")[forms_nombre].style.pointerEvents = "none";
+        document.getElementsByClassName("plus_stock")[forms_nombre-1].style.pointerEvents = "none";
     }
 }
 
@@ -35,11 +35,11 @@ function del_stock(forms_nombre){
         nombre -=1;
         document.forms[forms_nombre].nombre_produit.value = nombre;
         if(nombre == max_nombre-1){
-            document.getElementsByClassName("plus_stock")[forms_nombre].style.pointerEvents = "auto";
+            document.getElementsByClassName("plus_stock")[forms_nombre-1].style.pointerEvents = "auto";
         }
     }
     if(nombre==0){
         console.log("minimum");
-        document.getElementsByClassName("moins_stock")[forms_nombre].style.pointerEvents = "none";
+        document.getElementsByClassName("moins_stock")[forms_nombre-1].style.pointerEvents = "none";
     }
 }

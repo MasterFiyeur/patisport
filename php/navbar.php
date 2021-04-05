@@ -7,9 +7,17 @@ $menu = '<header class="nav_header">
         <div class="nav_text">
             Bienvenue dans la boutique Patisport
         </div>
-        <div class="nav_buttons">
-            <a href="connexion.php">Connexion</a>
-            <a href="panier.php">Panier</a>
+        <div class="nav_buttons">';
+if(!isset($_SESSION["user"])){
+    $menu .= '<a href="connexion.php">Connexion</a>';
+}else{
+    $menu .= '<form action="connexion.php" method="GET">
+        <input type="hidden" name="deconnexion" value="yes">
+        <input type="submit" value="Déconnexion">
+    </form>';
+}
+            
+$menu .=    '<a href="panier.php">Panier</a>
         </div>
     </div>
     <div class="nav_menu">

@@ -1,7 +1,3 @@
-.nav_header .nav_menu a:nth-child(5){
-    border: thin solid var(--color-blue-dark);
-}
-
 .content{
     background: url('../img/contact_fond.jpg');
     background-size: cover;

@@ -36,9 +36,9 @@
                                             <form action=''>
                                                 <div class='stock'>Stock : ".$_SESSION["produits"][$categorie][$i]["stock"]."</div>
                                                 <div class='gestion_stock'>
-                                                    <div class='moins_stock' onclick='del_stock(".$i.")'>-</div>
+                                                    <div class='moins_stock' onclick='del_stock(".($i+1).")'>-</div>
                                                     <input type='text' name='nombre_produit' id='nombre_produit' value='0' disabled>
-                                                    <div class='plus_stock' onclick='add_stock(".$i.")'>+</div>
+                                                    <div class='plus_stock' onclick='add_stock(".($i+1).")'>+</div>
                                                 </div>
                                                 <button class='btn_acheter'>Acheter</button>
                                             </form>
