@@ -120,6 +120,10 @@
     text-align: center;
 }
 
+.carte .contentBox h3 small{
+    font-size: 12px;
+}
+
 .carte .contentBox .prix{
     font-size: 20px;
     color: #fff;

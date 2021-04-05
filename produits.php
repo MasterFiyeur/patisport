@@ -30,7 +30,7 @@
                                         <img ".$_SESSION["produits"][$categorie][$i]["img"].">
                                     </div>
                                     <div class='contentBox'>
-                                        <h3>".$_SESSION["produits"][$categorie][$i]["label"]."</h3>
+                                        <h3>".$_SESSION["produits"][$categorie][$i]["label"]." <small>(".$_SESSION["produits"][$categorie][$i]["ref"].")</small></h3>
                                         <h2 class='prix'>€".$_SESSION["produits"][$categorie][$i]["prix"]."</h2>
                                         <div class='hidden_contentBox'>
                                             <form action=''>
