@@ -60,7 +60,6 @@
                     <td>€50.00</td>
                 </tr>
             </table>
-
             <div class="total-prix">
                 <table>
                     <tr>
