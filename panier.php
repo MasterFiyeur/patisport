@@ -60,6 +60,9 @@
                     <td>€50.00</td>
                 </tr>
             </table>
+            <?php 
+                var_dump($_SESSION["panier"]);
+            ?>
             <div class="total-prix">
                 <table>
                     <tr>

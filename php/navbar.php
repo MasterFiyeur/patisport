@@ -9,7 +9,9 @@ $menu = '<header class="nav_header">
         </div>
         <div class="nav_buttons">';
 if(!isset($_SESSION["user"])){
-    $menu .= '<a href="connexion.php">Connexion</a>';
+    $menu .= '<form action="connexion.php">
+    <input type="submit" value="Connexion">
+</form>';
 }else{
     $menu .= '<form action="connexion.php" method="GET">
         <input type="hidden" name="deconnexion" value="yes">

@@ -14,7 +14,7 @@ function stock_switch(){
 
 function add_stock(forms_nombre){
     let nombre = parseInt(document.forms[forms_nombre].nombre_produit.value);
-    let max_nombre = parseInt(document.getElementsByClassName("stock")[forms_nombre].textContent.substring(8));
+    let max_nombre = parseInt(document.getElementsByClassName("stock")[forms_nombre-1].textContent.substring(8));
     if(nombre<max_nombre){
         nombre +=1;
         document.forms[forms_nombre].nombre_produit.value = nombre;
@@ -23,7 +23,7 @@ function add_stock(forms_nombre){
 
 function del_stock(forms_nombre){
     let nombre = parseInt(document.forms[forms_nombre].nombre_produit.value);
-    let max_nombre = parseInt(document.getElementsByClassName("stock")[forms_nombre].textContent.substring(8));
+    let max_nombre = parseInt(document.getElementsByClassName("stock")[forms_nombre-1].textContent.substring(8));
     if(nombre>0){
         nombre -=1;
         document.forms[forms_nombre].nombre_produit.value = nombre;

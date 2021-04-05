@@ -137,6 +137,10 @@
     transition: .5s;
 }
 
+#nombre_produit{
+    pointer-events: none;
+}
+
 
 .carte .contentBox .btn_acheter{
     cursor: pointer;

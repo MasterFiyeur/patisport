@@ -18,6 +18,19 @@
             <div class="display_block">
                 <div class="content">
                     <?php
+                        include "./php/functions.php";
+                        if(!isset($_SESSION["user"]) && !empty($_POST)){
+                            echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
+                        }elseif(!empty($_POST)){
+                            $tableau = array($_POST["categorie"],$_POST["index"],intval($_POST["nombre_produit"]));
+                            if(verifstock($tableau)>=0){
+                                if(in_panier($tableau)){
+                                    array_push($_SESSION["panier"],$tableau);
+                                }
+                            }else{
+                                echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
+                            }
+                        }
                         if (isset($_GET["categorie"]) && in_array($_GET["categorie"],$_SESSION["categories"])) {
                             $categorie =  $_GET["categorie"];
                         }else{
@@ -33,12 +46,14 @@
                                         <h3>".$_SESSION["produits"][$categorie][$i]["label"]." <small>(".$_SESSION["produits"][$categorie][$i]["ref"].")</small></h3>
                                         <h2 class='prix'>€".$_SESSION["produits"][$categorie][$i]["prix"]."</h2>
                                         <div class='hidden_contentBox'>
-                                            <form action=''>
-                                                <div class='stock'>Stock : ".$_SESSION["produits"][$categorie][$i]["stock"]."</div>
+                                            <form action='produits.php?categorie=".$categorie."' method='POST'>
+                                                <div class='stock'>Stock : ".verifstock(array($categorie,$i,0))."</div>
                                                 <div class='gestion_stock'>
-                                                    <input type='button' class='moins_stock' onclick='del_stock(".$i.")' value='-'>
-                                                    <input type='text' name='nombre_produit' id='nombre_produit' value='0' disabled>
-                                                    <input type='button' class='plus_stock' onclick='add_stock(".$i.")' value='+'>
+                                                    <input type='hidden' name='categorie' value='".$categorie."'>
+                                                    <input type='hidden' name='index' value='".$i."'>
+                                                    <input type='button' class='moins_stock' onclick='del_stock(".($i+1).")' value='-'>
+                                                    <input type='text' name='nombre_produit' id='nombre_produit' value='0'>
+                                                    <input type='button' class='plus_stock' onclick='add_stock(".($i+1).")' value='+'>
                                                 </div>
                                                 <button class='btn_acheter'>Acheter</button>
                                             </form>
