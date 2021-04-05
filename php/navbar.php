@@ -1,5 +1,5 @@
 <?php 
-echo '<header class="nav_header">
+$menu = '<header class="nav_header">
     <div class="logo_nom">
         <div>
             <img src="img/logo.svg" alt="logo">
@@ -13,11 +13,28 @@ echo '<header class="nav_header">
         </div>
     </div>
     <div class="nav_menu">
-        <a href="index.php">Accueil</a>
-        <a href="produits.php?categorie=lacets">Lacets</a>
-        <a href="produits.php?categorie=proteges">Protèges lames</a>
-        <a href="produits.php?categorie=patins">Patins</a>
-        <a href="contact.php">Contactez-nous</a>
+        <a href="index.php">Accueil</a>';
+
+foreach($_SESSION["categories"] as $categorie){
+    switch ($categorie) {
+        case 'lacets':
+            $menu .= "<a href='produits.php?categorie=lacets'>Lacets</a>";
+            break;
+        case 'proteges':
+            $menu .= "<a href='produits.php?categorie=proteges'>Protèges lames</a>";
+            break;
+        case 'patins':
+            $menu .= "<a href='produits.php?categorie=patins'>Patins</a>";
+            break;
+        default:
+            $menu .= "<a href='produits.php?categorie=".$categorie."'>".$categorie."</a>";
+            break;
+    }
+}
+
+$menu .= '<a href="contact.php">Contactez-nous</a>
     </div>
 </header>';
+
+echo $menu;
 ?>
