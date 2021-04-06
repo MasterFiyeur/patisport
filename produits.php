@@ -23,11 +23,11 @@
                             echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
                         }elseif(!empty($_POST)){
                             $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
-                            if(verifstock($tableau)>=0){
+                            if(verifstock($tableau)>=0 && intval($_POST["nombre_produit"])>0){
                                 if(in_panier($tableau)){
                                     array_push($_SESSION["panier"],$tableau);
                                 }
-                            }else{
+                            }elseif((intval($_POST["nombre_produit"])>0)){
                                 echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
                             }
                         }
@@ -55,7 +55,7 @@
                                                     <input type='text' name='nombre_produit' id='nombre_produit' value='0'>
                                                     <input type='button' class='plus_stock' onclick='add_stock(".($i+1).")' value='+'>
                                                 </div>
-                                                <button class='btn_acheter'>Acheter</button>
+                                                <input type='submit' class='btn_acheter' value='Acheter'>
                                             </form>
                                         </div>
                                     </div>
