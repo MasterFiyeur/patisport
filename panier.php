@@ -75,7 +75,7 @@
             }
         ?>
     </main>
-    <?php 
+    <?php
         include "./php/footer.php";
     ?>
 </body>

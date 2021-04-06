@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$data = file_get_contents(__DIR__.'/../js/produits.json');
+$data = file_get_contents(__DIR__.'/../data/produits.json');
 $produits = json_decode($data, true);
 $_SESSION["categories"] = $produits[0]["categories"];
 $_SESSION["produits"] = $produits[1];
