@@ -24,7 +24,7 @@
                             $users = xmlrpc_decode($data);
                             if(isset($users[$_POST["username"]]) && $users[$_POST["username"]]==hash("sha256",$_POST["password"])){
                                 $_SESSION["user"]=$_POST["username"];
-                                include './php/varSession.inc.php';
+                                include './data/varSession.inc.php';
                                 header("Location: index.php");
                             }else{
                                 echo "<small>Nom d'utilisateur ou mot de passe incorrect.</small>";
