@@ -9,6 +9,19 @@
         include "./php/navbar.php";
     ?>
     <main>
+        <?php
+            if(isset($_GET["delete"]) && isset($_SESSION["panier"]) && intval($_GET["delete"])<count($_SESSION["panier"])){
+                $tempSessionPanier = array();
+                for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
+                    if($i != intval($_GET["delete"])){
+                        array_push($tempSessionPanier,$_SESSION["panier"][$i]);
+                    }
+                }
+                $_SESSION["panier"] = $tempSessionPanier;
+
+            }
+            if(isset($_SESSION["panier"]) && count($_SESSION["panier"])>0){
+        ?>
         <div class="cart">
             <h1>Panier</h1>
             <table>
@@ -17,70 +30,50 @@
                     <th>Quantité</th>
                     <th>Prix</th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="./img/produits/lacets/lacet1" alt="lacet1">
-                            <div>
-                                <p>Lacets 1 - La1</p>
-                                <small>Prix : €5.00</small><br>
-                                <a href="">Supprimer</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" min=0 value="1"></td>
-                    <td>€50.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="./img/produits/lacets/lacet2" alt="lacet1">
-                            <div>
-                                <p>Lacets 2 - La2</p>
-                                <small>Prix : €5.00</small><br>
-                                <a href="">Supprimer</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" min=0 value="1"></td>
-                    <td>€50.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="./img/produits/lacets/lacet3" alt="lacet1">
-                            <div>
-                                <p>Lacets 3 - La3</p>
-                                <small>Prix : €5.00</small><br>
-                                <a href="">Supprimer</a>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" min=0 value="1"></td>
-                    <td>€50.00</td>
-                </tr>
-            </table>
-            <?php 
-                var_dump($_SESSION["panier"]);
-            ?>
-            <div class="total-prix">
+                <?php
+                    $total = 0;
+                    for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
+                        $produit = $_SESSION["produits"][$_SESSION["panier"][$i][0]][$_SESSION["panier"][$i][1]];
+                        $total += $_SESSION["panier"][$i][2]*$produit["prix"];
+                        echo "<tr>
+                            <td>
+                                <div class='cart-info'>
+                                    <img ".$produit["img"].">
+                                    <div>
+                                        <p>".$produit["label"]."- ".$produit["ref"]."</p>
+                                        <small>Prix : €".$produit["prix"]."</small><br>
+                                        <a href='panier.php?delete=".$i."'>Supprimer</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>".$_SESSION["panier"][$i][2]."</td>
+                            <td>€".($_SESSION["panier"][$i][2]*$produit["prix"])."</td>
+                        </tr>";
+                    }
+            echo "</table>
+            <div class='total-prix'>
                 <table>
                     <tr>
                         <td>Sous-total</td>
-                        <td>€18.00</td>
+                        <td>€".$total."</td>
                     </tr>
                     <tr>
                         <td>Frais</td>
-                        <td>€5.00</td>
+                        <td>€".$_SESSION["taxes"]."</td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>€23.00</td>
+                        <td>€".($total+$_SESSION["taxes"])."</td>
                     </tr>
                 </table>
-            </div>
-
+            </div>";
+            ?>
         </div>
+        <?php 
+            }else{
+                echo '<div class="no_panier">Vous n\'avez aucun article dans votre panier !</div>';
+            }
+        ?>
     </main>
     <?php 
         include "./php/footer.php";

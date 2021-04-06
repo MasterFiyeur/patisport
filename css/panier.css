@@ -39,7 +39,7 @@ tr th{
 }
 
 td{
-    padding: 10px 5px;;
+    padding: 10px 5px;
 }
 
 tr td input{
@@ -76,6 +76,13 @@ th:last-child{
 .total-prix table{
     border-top: 3px solid cyan;
     max-width: 400px;
+}
+
+.no_panier{
+    text-align: center;
+    font-size: 25px;
+    color: cyan;
+    text-shadow: 2px 1px 1px #000;
 }
 
 @media screen and (max-width: 732px){

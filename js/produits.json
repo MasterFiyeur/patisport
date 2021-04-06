@@ -65,31 +65,31 @@
     }],
     "patins": [{
         "img": "src=\".\/img\/produits\/patins\/patin1.png\" alt=\"Patins motifs jaunes\"",
-        "stock": 9,
+        "stock": 5,
         "label": "Patins motifs jaunes",
         "prix": 34.99,
         "ref": "Pa1"
     }, {
         "img": "src=\".\/img\/produits\/patins\/patin2.png\" alt=\"Patins motifs gris\"",
-        "stock": 8,
+        "stock": 4,
         "label": "Patins motifs gris",
         "prix": 34.99,
         "ref": "Pa2"
     }, {
         "img": "src=\".\/img\/produits\/patins\/patin3.png\" alt=\"Patins \u00e0 fourrure\"",
-        "stock": 7,
+        "stock": 3,
         "label": "Patins \u00e0 fourrure",
         "prix": 42.99,
         "ref": "Pa3"
     }, {
         "img": "src=\".\/img\/produits\/patins\/patin4.png\" alt=\"Patins classiques\"",
-        "stock": 6,
+        "stock": 2,
         "label": "Patins classiques",
         "prix": 40.99,
         "ref": "Pa4"
     }, {
         "img": "src=\".\/img\/produits\/patins\/patin5.png\" alt=\"Patins motif bleu\"",
-        "stock": 5,
+        "stock": 1,
         "label": "Patins motif bleu",
         "prix": 44.99,
         "ref": "Pa5"

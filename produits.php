@@ -22,7 +22,7 @@
                         if(!isset($_SESSION["user"]) && !empty($_POST)){
                             echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
                         }elseif(!empty($_POST)){
-                            $tableau = array($_POST["categorie"],$_POST["index"],intval($_POST["nombre_produit"]));
+                            $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
                             if(verifstock($tableau)>=0){
                                 if(in_panier($tableau)){
                                     array_push($_SESSION["panier"],$tableau);
@@ -47,7 +47,7 @@
                                         <h2 class='prix'>€".$_SESSION["produits"][$categorie][$i]["prix"]."</h2>
                                         <div class='hidden_contentBox'>
                                             <form action='produits.php?categorie=".$categorie."' method='POST'>
-                                                <div class='stock'>Stock : ".verifstock(array($categorie,$i,0))."</div>
+                                                <div class='stock'>Stock : ".stockDisponible(array($categorie,$i,0))."</div>
                                                 <div class='gestion_stock'>
                                                     <input type='hidden' name='categorie' value='".$categorie."'>
                                                     <input type='hidden' name='index' value='".$i."'>

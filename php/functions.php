@@ -1,4 +1,12 @@
 <?php 
+    function stockDisponible($tab){
+        if(isset($_SESSION["user"])){
+            return (verifstock($tab));
+        }else{
+            return ($_SESSION["produits"][$tab[0]][$tab[1]]["stock"]);
+        }
+    }
+
     function verifstock($tab){
         if(isset($_SESSION["panier"])){
             $stockDispo = intval($_SESSION["produits"][$tab[0]][$tab[1]]["stock"]);
