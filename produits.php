@@ -46,7 +46,7 @@
                                         <h3>".$_SESSION["produits"][$categorie][$i]["label"]." <small>(".$_SESSION["produits"][$categorie][$i]["ref"].")</small></h3>
                                         <h2 class='prix'>€".$_SESSION["produits"][$categorie][$i]["prix"]."</h2>
                                         <div class='hidden_contentBox'>
-                                            <form action='produits.php?categorie=".$categorie."' method='POST'>
+                                            <form action='' method='POST'>
                                                 <div class='stock'>Stock : ".stockDisponible(array($categorie,$i,0))."</div>
                                                 <div class='gestion_stock'>
                                                     <input type='hidden' name='categorie' value='".$categorie."'>
