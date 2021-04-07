@@ -2,7 +2,7 @@
 $menu = '<header class="nav_header">
     <div class="logo_nom">
         <div>
-            <img src="img/logo.svg" alt="logo">
+            <img src="img/logo.png" alt="logo">
         </div>
         <div class="nav_text">
             Bienvenue dans la boutique Patisport
