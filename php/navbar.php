@@ -18,28 +18,14 @@ if(!isset($_SESSION["user"])){
         <input type="submit" value="Déconnexion">
     </form>';
 }
-            
+
 $menu .=    '<a href="panier.php">Panier</a>
         </div>
     </div>
     <div class="nav_menu">
         <a href="index.php">Accueil</a>';
-
-foreach($_SESSION["categories"] as $categorie){
-    switch ($categorie) {
-        case 'lacets':
-            $menu .= "<a href='produits.php?categorie=lacets'>Lacets</a>";
-            break;
-        case 'proteges':
-            $menu .= "<a href='produits.php?categorie=proteges'>Protèges lames</a>";
-            break;
-        case 'patins':
-            $menu .= "<a href='produits.php?categorie=patins'>Patins</a>";
-            break;
-        default:
-            $menu .= "<a href='produits.php?categorie=".$categorie."'>".$categorie."</a>";
-            break;
-    }
+foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
+    $menu .= "<a href='produits.php?categorie=".$categorie."'>".$label."</a>";
 }
 
 $menu .= '<a href="contact.php">Contactez-nous</a>

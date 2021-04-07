@@ -37,7 +37,8 @@
                             $categorie="lacets";
                         }
                         if(isset($_SESSION["produits"][$categorie])){
-                            for ($i=0; $i < count($_SESSION["produits"][$categorie]); $i++) { 
+                            /* Utilisation du for car besoin d'un indice $i */
+                            for ($i=0; $i < count($_SESSION["produits"][$categorie]); $i++) {
                                 echo "<div class='carte'>
                                     <div class='imageBox'>
                                         <img ".$_SESSION["produits"][$categorie][$i]["img"].">

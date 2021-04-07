@@ -1,5 +1,8 @@
 [{
-    "categories": ["lacets", "proteges", "patins"]
+    "categories": {"lacets":"Lacets",
+         "proteges":"Protège-Lames", 
+         "patins":"Patins"
+    }
 }, {
     "lacets": [{
         "img": "src=\".\/img\/produits\/lacets\/lacet1.png\" alt=\"Lacets jaunes\"",
@@ -33,33 +36,33 @@
         "ref": "La5"
     }],
     "proteges": [{
-        "img": "src=\".\/img\/produits\/proteges\/protege1.png\" alt=\"Prot\u00e8ges lames verts\"",
+        "img": "src=\".\/img\/produits\/proteges\/protege1.png\" alt=\"Prot\u00e8ge-lames verts\"",
         "stock": 9,
-        "label": "Prot\u00e8ges lames verts",
+        "label": "Prot\u00e8ge-lames verts",
         "prix": 9.99,
         "ref": "Pr1"
     }, {
-        "img": "src=\".\/img\/produits\/proteges\/protege2.png\" alt=\"Prot\u00e8ges lames jaunes\"",
+        "img": "src=\".\/img\/produits\/proteges\/protege2.png\" alt=\"Prot\u00e8ge-lames jaunes\"",
         "stock": 8,
-        "label": "Prot\u00e8ges lames jaunes",
+        "label": "Prot\u00e8ge-lames jaunes",
         "prix": 9.99,
         "ref": "Pr2"
     }, {
-        "img": "src=\".\/img\/produits\/proteges\/protege3.png\" alt=\"Prot\u00e8ges lames bleus\"",
+        "img": "src=\".\/img\/produits\/proteges\/protege3.png\" alt=\"Prot\u00e8ge-lames bleus\"",
         "stock": 7,
-        "label": "Prot\u00e8ges lames bleus",
+        "label": "Prot\u00e8ge-lames bleus",
         "prix": 9.99,
         "ref": "Pr3"
     }, {
-        "img": "src=\".\/img\/produits\/proteges\/protege4.png\" alt=\"Prot\u00e8ges lames blancs\"",
+        "img": "src=\".\/img\/produits\/proteges\/protege4.png\" alt=\"Prot\u00e8ge-lames blancs\"",
         "stock": 6,
-        "label": "Prot\u00e8ges lames blancs",
+        "label": "Prot\u00e8ge-lames blancs",
         "prix": 9.99,
         "ref": "Pr4"
     }, {
-        "img": "src=\".\/img\/produits\/proteges\/protege5.png\" alt=\"Prot\u00e8ges lames roses\"",
+        "img": "src=\".\/img\/produits\/proteges\/protege5.png\" alt=\"Prot\u00e8ge-lames roses\"",
         "stock": 5,
-        "label": "Prot\u00e8ges lames roses",
+        "label": "Prot\u00e8ge-lames roses",
         "prix": 9.99,
         "ref": "Pr5"
     }],
