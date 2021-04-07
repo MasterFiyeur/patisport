@@ -31,7 +31,7 @@
                                 echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
                             }
                         }
-                        if (isset($_GET["categorie"]) && in_array($_GET["categorie"],$_SESSION["categories"])) {
+                        if (isset($_GET["categorie"]) && isset($_SESSION["categories"][$_GET["categorie"]])) {
                             $categorie =  $_GET["categorie"];
                         }else{
                             $categorie="lacets";

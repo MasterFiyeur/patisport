@@ -1,4 +1,12 @@
 .content{
     padding: 30px;
     text-align: center;
+    background: url("../img/patinoire.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+.content img{
+    margin-bottom: 30px;
 }
