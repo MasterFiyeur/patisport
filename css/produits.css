@@ -10,10 +10,12 @@
 
 .display_block{
     display: block;
-    border-left: thin solid aqua;
     background-image: url('../img/content_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: thin solid cyan;
 }
 
 .btn_stock-switch{
