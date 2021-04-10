@@ -6,8 +6,11 @@
     <img src="./img/flocon.svg" alt="flocon">
     <h3>Produits</h3>
 
-<?php foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
-    echo "<a href='produits.php?categorie=".$categorie."'>".$label."</a>";
+<?php 
+$i = 0;
+foreach($_SESSION["categories"] as $categorie => $label){
+    echo "<a href='produits.php?categorie=".$i."'>".$label."</a>";
+    $i += 1;
 } ?>
 
 </div>

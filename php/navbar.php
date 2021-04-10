@@ -26,8 +26,11 @@
     <div class="nav_menu">
         <a href="index.php">Accueil</a>
 
-<?php foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
-    echo "<a href='produits.php?categorie=".$categorie."'>".$label."</a>";
+<?php 
+$i = 0;
+foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
+    echo "<a href='produits.php?categorie=".$i."'>".$label."</a>";
+    $i += 1;
 } ?>
 
         <a href="contact.php">Contactez-nous</a>

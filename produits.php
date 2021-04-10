@@ -31,11 +31,7 @@
                                 echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
                             }
                         }
-                        if (isset($_GET["categorie"]) && isset($_SESSION["categories"][$_GET["categorie"]])) {
-                            $categorie =  $_GET["categorie"];
-                        }else{
-                            $categorie="lacets";
-                        }
+                        $categorie =  idToCat();
                         if(isset($_SESSION["produits"][$categorie])){
                             /* Utilisation du for car besoin d'un indice $i */
                             for ($i=0; $i < count($_SESSION["produits"][$categorie]); $i++) {

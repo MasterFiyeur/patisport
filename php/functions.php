@@ -146,5 +146,21 @@
 <?php
     }
 
-    
+    function idToCat(){
+        if(!isset($_GET["categorie"])){
+            $id = 0;
+        }else{
+            $id = intval($_GET["categorie"]);
+        }
+        $i = 0;
+        /* Recherche l'id correspondant à l'index du tableau associatif */
+        foreach($_SESSION["categories"] as $key => $value){
+            if($i == $id){
+                return($key);
+            }
+            $i += 1;
+        }
+        /* Si la catégorie n'existe pas alors retourne la dernière valeur de $key */
+        return $key;
+    }
 ?>
