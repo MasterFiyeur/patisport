@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
     <?php 
         include "./php/header.php";
+        include "./php/functions.php";
+        if(!isset($_SESSION["user"]) && !empty($_POST)){
+            echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
+        }elseif(!empty($_POST)){
+            $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
+            if(verifstock($tableau)>=0 && intval($_POST["nombre_produit"])>0){
+                if(in_panier($tableau)){
+                    array_push($_SESSION["panier"],$tableau);
+                }
+            }elseif((intval($_POST["nombre_produit"])>0)){
+                echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
+            }
+        }
     ?>
     <link rel="stylesheet" href="css/produits.css">
 </head>
@@ -18,19 +30,6 @@
             <div class="display_block">
                 <div class="content">
                     <?php
-                        include "./php/functions.php";
-                        if(!isset($_SESSION["user"]) && !empty($_POST)){
-                            echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
-                        }elseif(!empty($_POST)){
-                            $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
-                            if(verifstock($tableau)>=0 && intval($_POST["nombre_produit"])>0){
-                                if(in_panier($tableau)){
-                                    array_push($_SESSION["panier"],$tableau);
-                                }
-                            }elseif((intval($_POST["nombre_produit"])>0)){
-                                echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
-                            }
-                        }
                         $categorie =  idToCat();
                         if(isset($_SESSION["produits"][$categorie])){
                             /* Utilisation du for car besoin d'un indice $i */

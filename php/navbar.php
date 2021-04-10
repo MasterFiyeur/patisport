@@ -20,7 +20,13 @@
             </form>
 <?php } ?>
 
-            <a href="panier.php">Panier</a>
+            <a href="panier.php">Panier
+            <?php 
+                if(isset($_SESSION["panier"])){
+                    echo "(".count($_SESSION["panier"]).")";
+                }
+            ?>
+            </a>
         </div>
     </div>
     <div class="nav_menu">

@@ -4,6 +4,7 @@
         include "./php/header.php";
     ?>
     <link rel="stylesheet" href="css/index.css">
+</head>
 <body>
     <?php
         include "./php/navbar.php";

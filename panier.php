@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?php 
+    <?php
         include "./php/header.php";
+        if(isset($_GET["delete"]) && isset($_SESSION["panier"]) && intval($_GET["delete"])<count($_SESSION["panier"])){
+            $tempSessionPanier = array();
+            for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
+                if($i != intval($_GET["delete"])){
+                    array_push($tempSessionPanier,$_SESSION["panier"][$i]);
+                }
+            }
+            $_SESSION["panier"] = $tempSessionPanier;
+
+        }
     ?>
     <link rel="stylesheet" href="css/panier.css">
+</head>
 <body>
     <?php
         include "./php/navbar.php";
     ?>
     <main>
         <?php
-            if(isset($_GET["delete"]) && isset($_SESSION["panier"]) && intval($_GET["delete"])<count($_SESSION["panier"])){
-                $tempSessionPanier = array();
-                for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
-                    if($i != intval($_GET["delete"])){
-                        array_push($tempSessionPanier,$_SESSION["panier"][$i]);
-                    }
-                }
-                $_SESSION["panier"] = $tempSessionPanier;
-
-            }
             if(isset($_SESSION["panier"]) && count($_SESSION["panier"])>0){
         ?>
         <div class="cart">

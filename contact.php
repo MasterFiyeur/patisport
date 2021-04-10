@@ -9,7 +9,6 @@
         $valid = $res[1];
     }
 ?>
-<head>
     <?php 
         include "./php/header.php";
     ?>

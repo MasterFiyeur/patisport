@@ -15,4 +15,3 @@ $_SESSION["produits"] = $produits[1];
     <title>Patisport</title>
 
     <link rel="stylesheet" href="css/style.css">
-</head>
