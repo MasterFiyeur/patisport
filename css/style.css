@@ -130,9 +130,11 @@
     border: thin solid cyan;
 }
 
-.content img{
-    height: 250px;
-    width: 250px;
+.content img{    
+    height: 100%;
+    max-height: 237px;
+    width: 100%;
+    max-width: 343px;
 }
 
 footer{

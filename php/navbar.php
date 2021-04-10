@@ -1,5 +1,5 @@
-<?php 
-$menu = '<header class="nav_header">
+
+<header class="nav_header">
     <div class="logo_nom">
         <div>
             <img src="img/logo.png" alt="logo">
@@ -7,30 +7,29 @@ $menu = '<header class="nav_header">
         <div class="nav_text">
             Bienvenue dans la boutique Patisport
         </div>
-        <div class="nav_buttons">';
-if(!isset($_SESSION["user"])){
-    $menu .= '<form action="connexion.php">
-    <input type="submit" value="Connexion">
-</form>';
-}else{
-    $menu .= '<form action="connexion.php" method="GET">
-        <input type="hidden" name="deconnexion" value="yes">
-        <input type="submit" value="Déconnexion">
-    </form>';
-}
+        <div class="nav_buttons">
 
-$menu .=    '<a href="panier.php">Panier</a>
+<?php if(!isset($_SESSION["user"])){ ?>
+            <form action="connexion.php">
+                <input type="submit" value="Connexion">
+            </form>
+<?php }else{ ?>
+            <form action="connexion.php" method="GET">
+                <input type="hidden" name="deconnexion" value="yes">
+                <input type="submit" value="Déconnexion">
+            </form>
+<?php } ?>
+
+            <a href="panier.php">Panier</a>
         </div>
     </div>
     <div class="nav_menu">
-        <a href="index.php">Accueil</a>';
-foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
-    $menu .= "<a href='produits.php?categorie=".$categorie."'>".$label."</a>";
-}
+        <a href="index.php">Accueil</a>
 
-$menu .= '<a href="contact.php">Contactez-nous</a>
+<?php foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
+    echo "<a href='produits.php?categorie=".$categorie."'>".$label."</a>";
+} ?>
+
+        <a href="contact.php">Contactez-nous</a>
     </div>
-</header>';
-
-echo $menu;
-?>
+</header>

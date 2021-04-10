@@ -1,5 +1,4 @@
-<?php 
-echo '<footer>
+<footer>
     <!-- Mentions légales + contacts -->
     <div class="copyright">&copy;Patisport - 2021<br/>Alan Dabrowski & Théo Julien</div>
     <div class="legales">
@@ -12,5 +11,4 @@ echo '<footer>
             <a href="mailto:theo.julien@eisti.fr">theo.julien@eisti.fr</a>
         </div>
     </div>
-<footer>';
-?>
+<footer>
