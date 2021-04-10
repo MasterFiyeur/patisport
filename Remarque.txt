@@ -1,5 +1,4 @@
 Nom fichier : ING1GI1-Dabrowski-Julien.zip
-image patinoire en fond de l'index
 nombre de produit dans le panier
 foreach à la place des for
 utiliser php que pour les variables
