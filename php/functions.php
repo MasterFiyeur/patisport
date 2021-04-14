@@ -163,4 +163,16 @@
         /* Si la catégorie n'existe pas alors retourne la dernière valeur de $key */
         return $key;
     }
+
+    function deleteCart(){
+        if(isset($_GET["delete"]) && isset($_SESSION["panier"]) && intval($_GET["delete"])<count($_SESSION["panier"])){
+            $tempSessionPanier = array();
+            for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
+                if($i != intval($_GET["delete"])){
+                    array_push($tempSessionPanier,$_SESSION["panier"][$i]);
+                }
+            }
+            $_SESSION["panier"] = $tempSessionPanier;
+        }
+    }
 ?>

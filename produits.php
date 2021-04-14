@@ -37,22 +37,39 @@
                             ?>
                                 <div class='carte'>
                                     <div class='imageBox'>
-                                        <img <?php echo $_SESSION["produits"][$categorie][$i]["img"]; ?>>
+                                        <img 
+                                            <?php echo $_SESSION["produits"][$categorie][$i]["img"]; ?>
+                                        >
                                     </div>
                                     <div class='contentBox'>
-                                        <h3><?php echo $_SESSION["produits"][$categorie][$i]["label"]; ?>
-                                            <small>(<?php echo $_SESSION["produits"][$categorie][$i]["ref"]; ?>)</small>
+                                        <h3>
+                                            <?php echo $_SESSION["produits"][$categorie][$i]["label"]; ?>
+                                            <small>(
+                                                <?php echo $_SESSION["produits"][$categorie][$i]["ref"]; ?>
+                                            )</small>
                                         </h3>
-                                        <h2 class='prix'>€<?php echo $_SESSION["produits"][$categorie][$i]["prix"]; ?></h2>
+                                        <h2 class='prix'>€
+                                            <?php echo $_SESSION["produits"][$categorie][$i]["prix"]; ?>
+                                        </h2>
                                         <div class='hidden_contentBox'>
                                             <form action='' method='POST'>
-                                                <div class='stock'>Stock : <?php echo stockDisponible(array($categorie,$i,0)); ?></div>
+                                                <div class='stock'>Stock : 
+                                                    <?php echo stockDisponible(array($categorie,$i,0)); ?>
+                                                </div>
                                                 <div class='gestion_stock'>
-                                                    <input type='hidden' name='categorie' value=<?php echo "'".$categorie."'"; ?>>
-                                                    <input type='hidden' name='index' value= <?php echo "'".$i."'"; ?>>
-                                                    <input type='button' class='moins_stock' <?php echo "onclick='del_stock(".($i+1).")'"; ?> value='-'>
+                                                    <input type='hidden' name='categorie' 
+                                                        value=<?php echo "'".$categorie."'"; ?>
+                                                    >
+                                                    <input type='hidden' name='index' 
+                                                        value= <?php echo "'".$i."'"; ?>
+                                                    >
+                                                    <input type='button' class='moins_stock' 
+                                                        <?php echo "onclick='del_stock(".($i+1).")'"; ?> 
+                                                    value='-'>
                                                     <input type='text' name='nombre_produit' id='nombre_produit' value='0'>
-                                                    <input type='button' class='plus_stock' <?php echo "onclick='add_stock(".($i+1).")'"; ?> value='+'>
+                                                    <input type='button' class='plus_stock' 
+                                                        <?php echo "onclick='add_stock(".($i+1).")'"; ?>
+                                                    value='+'>
                                                 </div>
                                                 <input type='submit' class='btn_acheter' value='Acheter'>
                                             </form>
