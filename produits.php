@@ -3,11 +3,13 @@
     <?php 
         include "./php/header.php";
         include "./php/functions.php";
+        $categorie = choixCat($categories);
+        $produits = getProduits($categorie);
         if(!isset($_SESSION["user"]) && !empty($_POST)){
             echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
         }elseif(!empty($_POST)){
             $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
-            if(verifstock($tableau)>=0 && intval($_POST["nombre_produit"])>0){
+            if(verifstock($tableau,$produits)>=0 && intval($_POST["nombre_produit"])>0){
                 if(in_panier($tableau)){
                     array_push($_SESSION["panier"],$tableau);
                 }
@@ -30,31 +32,30 @@
             <div class="display_block">
                 <div class="content">
                     <?php
-                        $categorie =  idToCat();
-                        if(isset($_SESSION["produits"][$categorie])){
-                            /* Utilisation du for car besoin d'un indice $i */
-                            for ($i=0; $i < count($_SESSION["produits"][$categorie]); $i++) {
+                        if(estExistante($categories,$categorie)){
+                            /* Utilisation du for car besoin d'un indice $i pour le JS*/
+                            for ($i=0; $i < count($produits); $i++) {
                             ?>
                                 <div class='carte'>
                                     <div class='imageBox'>
                                         <img 
-                                            <?php echo $_SESSION["produits"][$categorie][$i]["img"]; ?>
+                                            <?php echo $produits[$i]["img"]; ?>
                                         >
                                     </div>
                                     <div class='contentBox'>
                                         <h3>
-                                            <?php echo $_SESSION["produits"][$categorie][$i]["label"]; ?>
+                                            <?php echo $produits[$i]["label"]; ?>
                                             <small>(
-                                                <?php echo $_SESSION["produits"][$categorie][$i]["ref"]; ?>
+                                                <?php echo $produits[$i]["ref"]; ?>
                                             )</small>
                                         </h3>
                                         <h2 class='prix'>€
-                                            <?php echo $_SESSION["produits"][$categorie][$i]["prix"]; ?>
+                                            <?php echo $produits[$i]["prix"]; ?>
                                         </h2>
                                         <div class='hidden_contentBox'>
                                             <form action='' method='POST'>
                                                 <div class='stock'>Stock : 
-                                                    <?php echo stockDisponible(array($categorie,$i,0)); ?>
+                                                    <?php echo stockDisponible(array($categorie,$i,0),$produits); ?>
                                                 </div>
                                                 <div class='gestion_stock'>
                                                     <input type='hidden' name='categorie' 

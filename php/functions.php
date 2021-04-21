@@ -1,15 +1,15 @@
 <?php 
-    function stockDisponible($tab){
+    function stockDisponible($tab,$prod){
         if(isset($_SESSION["user"])){
-            return (verifstock($tab));
+            return (verifstock($tab,$prod));
         }else{
-            return ($_SESSION["produits"][$tab[0]][$tab[1]]["stock"]);
+            return ($prod[$tab[1]]["stock"]);
         }
     }
 
-    function verifstock($tab){
+    function verifstock($tab,$prod){
         if(isset($_SESSION["panier"])){
-            $stockDispo = intval($_SESSION["produits"][$tab[0]][$tab[1]]["stock"]);
+            $stockDispo = intval($prod[$tab[1]]["stock"]);
             $stockPrecedent = 0;
             for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
                 if($_SESSION["panier"][$i][0] == $tab[0] && $_SESSION["panier"][$i][1] == $tab[1]){
@@ -146,24 +146,6 @@
 <?php
     }
 
-    function idToCat(){
-        if(!isset($_GET["categorie"])){
-            $id = 0;
-        }else{
-            $id = intval($_GET["categorie"]);
-        }
-        $i = 0;
-        /* Recherche l'id correspondant à l'index du tableau associatif */
-        foreach($_SESSION["categories"] as $key => $value){
-            if($i == $id){
-                return($key);
-            }
-            $i += 1;
-        }
-        /* Si la catégorie n'existe pas alors retourne la dernière valeur de $key */
-        return $key;
-    }
-
     function deleteCart(){
         if(isset($_GET["delete"]) && isset($_SESSION["panier"]) && intval($_GET["delete"])<count($_SESSION["panier"])){
             $tempSessionPanier = array();
@@ -174,5 +156,28 @@
             }
             $_SESSION["panier"] = $tempSessionPanier;
         }
+    }
+
+    function choixCat($cat){
+        if(isset($_GET["categorie"])){
+            foreach ($cat as $value) {
+                if($value["id"]==$_GET["categorie"]){
+                    return($value["categorie"]);
+                }
+            }
+            return $value["categorie"];
+        }else{
+            return $cat[0]["categorie"];
+        }
+    }
+
+    function estExistante($categories,$categorie){
+        $res = false;
+        foreach ($categories as $value) {
+            if($value["categorie"]==$categorie){
+                return true;
+            }
+        }
+        return $res;
     }
 ?>

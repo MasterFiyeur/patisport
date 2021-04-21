@@ -32,12 +32,11 @@
     <div class="nav_menu">
         <a href="index.php">Accueil</a>
 
-<?php 
-$i = 0;
-foreach($_SESSION["categories"] as $categorie => $label){//Mettre des id
-    echo "<a href='produits.php?categorie=".$i."'>".$label."</a>";
-    $i += 1;
-} ?>
+<?php
+foreach($categories as $value){//Mettre des id
+    echo "<a href='produits.php?categorie=".$value["id"]."'>".$value["label"]."</a>";
+} 
+?>
 
         <a href="contact.php">Contactez-nous</a>
     </div>

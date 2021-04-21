@@ -4,7 +4,9 @@ $data = file_get_contents(__DIR__.'/../data/produits.json');
 $produits = json_decode($data, true);
 $_SESSION["categories"] = $produits[0]["categories"];
 $_SESSION["produits"] = $produits[1];
-?>
+include __DIR__.'/../bdd/bdd.php';
+$categories = getCategories();
+?>  
 
 <head>
     <meta charset="UTF-8">
