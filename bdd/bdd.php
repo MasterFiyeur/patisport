@@ -54,8 +54,8 @@ function getProduits($categorie){
             //Prévention des injections
             return;
         }
-        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM '.$categorie);
-        $req -> execute();
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM produits WHERE categorie = ?');
+        $req -> execute(array($categorie));
         $res = array();
         foreach ($req as $row) {
             array_push($res,$row);
