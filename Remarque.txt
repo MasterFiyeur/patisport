@@ -4,3 +4,5 @@ foreach à la place des for
 utiliser php que pour les variables
 Ajouter le nom d'utilisateur dans la connexion
 Faire des fonctions
+Faire les users
+Changer la bdd avec uniquement une table produit

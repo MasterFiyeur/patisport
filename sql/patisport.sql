@@ -14,5 +14,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `user` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
+  `role` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 );
