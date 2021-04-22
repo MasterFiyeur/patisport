@@ -16,7 +16,7 @@
 }
 
 .nav_header{
-    z-index: 1099;
+    z-index: 100;
     position: fixed;
     top: 0;
     width: 100%;

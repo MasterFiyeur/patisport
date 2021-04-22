@@ -2,11 +2,26 @@
 <html lang="fr">
     <?php 
         include "./php/header.php";
+    ?>
+    <link rel="stylesheet" href="css/produits.css">
+</head>
+<body>
+    <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Attention</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    <?php
         include "./php/functions.php";
         $categorie = choixCat($categories);
         $produits = getProduits($categorie);
+        $showModale = 0;
         if(!isset($_SESSION["user"]) && !empty($_POST)){
-            echo '<script>alert("Vous devez être connecté pour ajouter un produit au panier");</script>';
+            $showModale = 1;
+            echo "<p>Vous devez être connecté pour ajouter un produit au panier.</p>";
         }elseif(!empty($_POST)){
             $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
             if(verifstock($tableau,$produits)>=0 && intval($_POST["nombre_produit"])>0){
@@ -14,13 +29,23 @@
                     array_push($_SESSION["panier"],$tableau);
                 }
             }elseif((intval($_POST["nombre_produit"])>0)){
-                echo '<script>alert("Le stock ne permet pas d\'ajouter ce(s) article(s) au panier.");</script>';
+                $showModale = 2;
+                echo "<p>Le stock ne permet pas d'ajouter ce(s) article(s) au panier.</p>";
             }
         }
     ?>
-    <link rel="stylesheet" href="css/produits.css">
-</head>
-<body>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <?php
+                if($showModale==1){
+                    echo '<a href="connexion.php"><button type="button" class="btn btn-primary">Se connecter</button></a>';
+                }
+                ?>
+            </div>
+            </div>
+        </div>
+    </div>
     <?php
         include "./php/navbar.php";
     ?>
@@ -91,6 +116,15 @@
     <?php
         include './php/footer.php';
     ?>
+    <?php
+    if($showModale>0){
+    ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script>
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        myModal.show();
+    </script>
+    <?php } ?>
     <script type="text/javascript" src="./js/produits.js"></script>
 </body>
 </html>
