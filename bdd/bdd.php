@@ -81,7 +81,6 @@ function auth($user,$password){
         foreach ($req as $row) {
             array_push($res,$row);
         }
-        var_dump($res);
         Deconnexion();
         $req = NULL;
         if(count($res)>0){
@@ -139,5 +138,15 @@ function getProduit($ref){
         print "Erreur !".$e -> getMessage();
         return NULL;
     }
+}
+
+function verificationFinale($panier){
+    foreach ($panier as $value){
+        $produit = getProduit($value[0]);
+        if(intval($value[1])>intval($produit['stock'])){
+            return false;
+        }
+    }
+    return true;
 }
 ?>

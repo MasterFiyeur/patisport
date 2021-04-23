@@ -71,6 +71,7 @@ th:last-child{
     align-items: flex-end;
     flex-direction: column;
     margin-right: 20%;
+    margin-bottom: 15px;
 }
 
 .total-prix table{
@@ -85,9 +86,58 @@ th:last-child{
     text-shadow: 2px 1px 1px #000;
 }
 
+/* Info Client */
+.infoClient form{
+    padding: 25px 0;
+    margin-right: 25px;
+}
+
+.infoClient h3,
+.infoClient h6{
+    text-align: center;
+}
+
+.infoClient input[type=button]{
+    width: 40%;
+}
+
+.infoClient .wrong{
+    border: thin solid red;
+}
+
+.infosRecap{
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infosRecap .infosG{
+    margin: 20px;
+    border: thin solid cyan;
+    border-radius: 15px;
+}
+
+.infosRecap h5{
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+.infosRecap hr{
+    background-color: cyan;
+}
+
+.infosRecap input{
+    width: 50%;
+}
+
 @media screen and (max-width: 732px){
     main{
         margin-top: 226px;
+    }
+    .infoClient button[type=submit]{
+        width: 80%;
     }
 }
 

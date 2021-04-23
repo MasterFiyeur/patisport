@@ -179,4 +179,33 @@
         }
         return $res;
     }
+
+    function verifCommande(){
+        if(!isset($_POST["prenom"])
+        || trim($_POST["prenom"]) == ""
+        || !isset($_POST["nom"])
+        || trim($_POST["nom"]) == ""
+        || !isset($_POST["mail"])
+        || preg_match("/^\S+@\S+\.\S+$/", $_POST["mail"])==0
+        || !isset($_POST["adresseLivr"])
+        || trim($_POST["adresseLivr"]) == ""
+        || !isset($_POST["adresse2Livr"])
+        || !isset($_POST["paysLivr"])
+        || trim($_POST["paysLivr"]) == ""
+        || !isset($_POST["villeLivr"])
+        || trim($_POST["villeLivr"]) == ""
+        || !isset($_POST["codeLivr"])
+        || trim($_POST["codeLivr"]) == ""
+        || !isset($_POST["adresseFact"])
+        || trim($_POST["adresseFact"]) == ""
+        || !isset($_POST["adresse2Fact"])
+        || !isset($_POST["paysFact"])
+        || trim($_POST["paysFact"]) == ""
+        || !isset($_POST["villeFact"])
+        || trim($_POST["villeFact"]) == ""
+        || !isset($_POST["codeFact"])
+        || trim($_POST["codeFact"]) == ""){
+            header("Location: index.php");
+        }
+    }
 ?>
