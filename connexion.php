@@ -24,6 +24,7 @@
                             $authentification = auth($_POST["username"],hash("sha256",$_POST["password"]));
                             if($authentification>0){
                                 $_SESSION["user"]=$_POST["username"];
+                                $_SESSION["usermdp"]=hash("sha256",$_POST["password"]);
                                 $_SESSION["role"]=$authentification==2?"administrateur":"membre";
                                 include './data/varSession.inc.php';
                                 header("Location: index.php");

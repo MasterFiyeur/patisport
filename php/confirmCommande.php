@@ -87,9 +87,12 @@ verifCommande();
     </div>
     <?php 
         if(verificationFinale($_SESSION["panier"])){
-            echo '<input type="button" class="btn btn-primary" value="Valider" onclick="verification_informations()">';
+            echo '<input type=hidden value=\''.json_encode($_SESSION["panier"]).'\' id="datas"/>';
+            echo '<input type="button" class="btn btn-primary" value="Valider" onclick="verification_informations()"\>';
         }else{
             echo 'Un problème est survenu lors de la vérification des stocks.';
         }
     ?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/confirmCommande.js"></script>
 </div>

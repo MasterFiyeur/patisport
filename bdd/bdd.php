@@ -149,4 +149,22 @@ function verificationFinale($panier){
     }
     return true;
 }
+
+function updateStock($ref,$stock){
+    if (Connexion()==false){
+        echo "Erreur dans la mise a jour du stock du produit.";
+        return false;
+    }
+    try{
+        $req = $GLOBALS['cnx'] -> prepare('UPDATE produits SET stock = ? WHERE ref = ?');
+        $req -> execute(array($stock,$ref));
+        Deconnexion();
+        $req = NULL;
+        return true;
+    }catch (PDOException $e) {
+        print "Erreur !".$e -> getMessage();
+        return false;
+    }
+}
+
 ?>
