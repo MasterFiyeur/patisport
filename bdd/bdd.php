@@ -29,7 +29,7 @@ function getCategories(){
         return NULL;
     }
     try{
-        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM categories');
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM categories;');
         $req -> execute();
         $res = array();
         foreach ($req as $row) {
@@ -54,7 +54,7 @@ function getProduits($categorie){
             //Prévention des injections
             return;
         }
-        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM produits WHERE categorie = ?');
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM produits WHERE categorie = ?;');
         $req -> execute(array($categorie));
         $res = array();
         foreach ($req as $row) {
@@ -69,4 +69,33 @@ function getProduits($categorie){
     }
 }
 
+function auth($user,$password){
+    if (Connexion()==false){
+        echo "Erreur dans la connexion.";
+        return NULL;
+    }
+    try{
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM users WHERE user = ? AND password = ?;');
+        $req -> execute(array($user,$password));
+        $res = array();
+        foreach ($req as $row) {
+            array_push($res,$row);
+        }
+        var_dump($res);
+        Deconnexion();
+        $req = NULL;
+        if(count($res)>0){
+            if($res[0]['role']=='administrateur'){
+                return 2;
+            }else{
+                return 1;
+            }
+        }else{
+            return 0;
+        }
+    }catch (PDOException $e) {
+        print "Erreur !".$e -> getMessage();
+        return 0;
+    }
+}
 ?>

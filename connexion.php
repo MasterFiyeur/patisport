@@ -21,10 +21,10 @@
                         }elseif(isset($_SESSION["user"])){
                             header("Location: index.php"); 
                         }elseif(!empty($_POST["username"]) && !empty($_POST["password"])){
-                            $data = file_get_contents("./data/users.xml");
-                            $users = xmlrpc_decode($data);
-                            if(isset($users[$_POST["username"]]) && $users[$_POST["username"]]==hash("sha256",$_POST["password"])){
+                            $authentification = auth($_POST["username"],hash("sha256",$_POST["password"]));
+                            if($authentification>0){
                                 $_SESSION["user"]=$_POST["username"];
+                                $_SESSION["role"]=$authentification==2?"administrateur":"membre";
                                 include './data/varSession.inc.php';
                                 header("Location: index.php");
                             }else{

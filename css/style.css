@@ -60,6 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     border-radius: 5px;
 }
 
@@ -67,6 +68,8 @@
 .nav_header .nav_buttons input[type=submit]{
     box-shadow: 1px 1px 3px blue;
     margin-left: 5px;
+    height: 40px;
+    font-size: 15px;
 }
 
 .nav_header .nav_menu a,
@@ -77,6 +80,11 @@
     padding: 7px 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+
+.nav_header .nav_buttons a{
+    padding: 9px 20px;
 }
 
 .nav_header .nav_buttons input[type=submit]{

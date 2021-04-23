@@ -8,7 +8,6 @@
             Bienvenue dans la boutique Patisport
         </div>
         <div class="nav_buttons">
-
 <?php if(!isset($_SESSION["user"])){ ?>
             <form action="connexion.php">
                 <input type="submit" value="Connexion">
@@ -16,10 +15,11 @@
 <?php }else{ ?>
             <form action="connexion.php" method="GET">
                 <input type="hidden" name="deconnexion" value="yes">
-                <input type="submit" value="Déconnexion">
+                <input type="submit" 
+                <?php echo "value='".substr($_SESSION["user"],0,14)." - Déconnexion'"; ?>
+                >
             </form>
 <?php } ?>
-
             <a href="panier.php">Panier
             <?php 
                 if(isset($_SESSION["panier"])){

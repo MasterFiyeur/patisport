@@ -18,7 +18,6 @@ foreach ($produits[1] as $key => $value){
 /* Utilisateur */
 $data = file_get_contents(__DIR__."/../data/users.xml");
 $users = xmlrpc_decode($data);
-var_dump($users);
 foreach ($users as $value) {
     $req .= " INSERT INTO users(`user`, `password`, `role`) VALUES ('".$value[0]."','".$value[1]."','".$value[2]."');";
 }

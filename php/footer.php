@@ -3,7 +3,7 @@
     <div class="copyright">&copy;Patisport - 2021<br/>Alan Dabrowski & Théo Julien</div>
     <div class="legales">
         <div>
-            <b>19 rue du projet d\'informatique<br/>
+            <b>19 rue du projet d'informatique<br/>
             95000, Cergy, Société Patisport</b>
             Webmasters : M. Dabrowski et M. Julien<br/>
             01 26 96 53 85<br/>
