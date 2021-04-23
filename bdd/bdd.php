@@ -98,4 +98,46 @@ function auth($user,$password){
         return 0;
     }
 }
+
+function getStock($ref){
+    if (Connexion()==false){
+        echo "Erreur dans la lecture du stock du produit.";
+        return NULL;
+    }
+    try{
+        $req = $GLOBALS['cnx'] -> prepare('SELECT stock FROM produits WHERE ref = ? LIMIT 1;');
+        $req -> execute(array($ref));
+        $res = array();
+        foreach ($req as $row) {
+            array_push($res,$row);
+        }
+        Deconnexion();
+        $req = NULL;
+        return count($res)>0?intval($res[0]['stock']):0;
+    }catch (PDOException $e) {
+        print "Erreur !".$e -> getMessage();
+        return NULL;
+    }
+}
+
+function getProduit($ref){
+    if (Connexion()==false){
+        echo "Erreur dans la lecture du stock du produit.";
+        return NULL;
+    }
+    try{
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM produits WHERE ref = ? LIMIT 1;');
+        $req -> execute(array($ref));
+        $res = array();
+        foreach ($req as $row) {
+            array_push($res,$row);
+        }
+        Deconnexion();
+        $req = NULL;
+        return count($res)>0?$res[0]:NULL;
+    }catch (PDOException $e) {
+        print "Erreur !".$e -> getMessage();
+        return NULL;
+    }
+}
 ?>

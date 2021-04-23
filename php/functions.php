@@ -3,28 +3,28 @@
         if(isset($_SESSION["user"])){
             return (verifstock($tab,$prod));
         }else{
-            return ($prod[$tab[1]]["stock"]);
+            return (getStock($tab[0]));
         }
     }
 
     function verifstock($tab,$prod){
         if(isset($_SESSION["panier"])){
-            $stockDispo = intval($prod[$tab[1]]["stock"]);
+            $stockDispo = getStock($tab[0]);
             $stockPrecedent = 0;
-            for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
-                if($_SESSION["panier"][$i][0] == $tab[0] && $_SESSION["panier"][$i][1] == $tab[1]){
-                    $stockPrecedent += $_SESSION["panier"][$i][2];
+            foreach ($_SESSION["panier"] as $value) {
+                if($value[0] == $tab[0]){
+                    $stockPrecedent += $value[1];
                 }
             }
-            return ($stockDispo-($stockPrecedent+$tab[2]));
+            return ($stockDispo-($stockPrecedent+$tab[1]));
         }
         return -1;
     }
 
     function in_panier($tab){
         for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
-            if($_SESSION["panier"][$i][0] == $tab[0] && $_SESSION["panier"][$i][1] == $tab[1]){
-                $_SESSION["panier"][$i][2] += $tab[2];
+            if($_SESSION["panier"][$i][0] == $tab[0]){
+                $_SESSION["panier"][$i][1] += $tab[1];
                 return false;
             }
         }
@@ -78,7 +78,6 @@
         return array($wrong,$valid);
     }
     
-
     function scriptContact($wrong,$good){
         ?>
         <script>

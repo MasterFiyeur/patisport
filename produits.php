@@ -24,7 +24,7 @@
             $showModale = 1;
             echo "<p>Vous devez être connecté pour ajouter un produit au panier.</p>";
         }elseif(!empty($_POST)){
-            $tableau = array($_POST["categorie"],intval($_POST["index"]),intval($_POST["nombre_produit"]));
+            $tableau = array($_POST["ref"],intval($_POST["nombre_produit"]));
             if(verifstock($tableau,$produits)>=0 && intval($_POST["nombre_produit"])>0){
                 if(in_panier($tableau)){
                     array_push($_SESSION["panier"],$tableau);
@@ -81,14 +81,11 @@
                                         <div class='hidden_contentBox'>
                                             <form action='' method='POST'>
                                                 <div class='stock'>Stock : 
-                                                    <?php echo stockDisponible(array($categorie,$i,0),$produits); ?>
+                                                    <?php echo stockDisponible(array($produits[$i]["ref"],0),$produits); ?>
                                                 </div>
                                                 <div class='gestion_stock'>
-                                                    <input type='hidden' name='categorie' 
-                                                        value=<?php echo "'".$categorie."'"; ?>
-                                                    >
-                                                    <input type='hidden' name='index' 
-                                                        value= <?php echo "'".$i."'"; ?>
+                                                    <input type='hidden' name='ref' 
+                                                        value= <?php echo "'".$produits[$i]["ref"]."'"; ?>
                                                     >
                                                     <input type='button' class='moins_stock' 
                                                         <?php echo "onclick='del_stock(".($i+1).")'"; ?> 

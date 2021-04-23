@@ -26,8 +26,9 @@
                 <?php
                     $total = 0;
                     for ($i=0; $i < count($_SESSION["panier"]); $i++) { 
-                        $produit = $_SESSION["produits"][$_SESSION["panier"][$i][0]][$_SESSION["panier"][$i][1]];
-                        $total += $_SESSION["panier"][$i][2]*$produit["prix"];
+                        $value = $_SESSION["panier"][$i];
+                        $produit = getProduit($value[0]);
+                        $total += $value[1]*floatval($produit['prix']);
                         ?>
                         <tr>
                             <td>
@@ -49,10 +50,10 @@
                                 </div>
                             </td>
                             <td>
-                                <?php echo $_SESSION["panier"][$i][2]; ?>
+                                <?php echo $value[1]; ?>
                             </td>
                             <td>
-                                <?php echo "€".($_SESSION["panier"][$i][2]*$produit["prix"]); ?>
+                                <?php echo "€".($value[1]*$produit["prix"]); ?>
                             </td>
                         </tr>
                     <?php } ?>
