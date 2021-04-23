@@ -1,3 +1,6 @@
+TRUNCATE TABLE `categories`;
+TRUNCATE TABLE `produits`;
+TRUNCATE TABLE `users`;
 INSERT INTO categories (`categorie`, `label`) VALUES('lacets',"Lacets");
 INSERT INTO categories (`categorie`, `label`) VALUES('proteges',"Protège-Lames");
 INSERT INTO categories (`categorie`, `label`) VALUES('patins',"Patins");
@@ -16,3 +19,7 @@ INSERT INTO produits VALUES('Pa2','src="./img/produits/patins/patin2.png" alt="P
 INSERT INTO produits VALUES('Pa3','src="./img/produits/patins/patin3.png" alt="Patins à fourrure"',3,'Patins à fourrure',42.99,"patins");
 INSERT INTO produits VALUES('Pa4','src="./img/produits/patins/patin4.png" alt="Patins classiques"',2,'Patins classiques',40.99,"patins");
 INSERT INTO produits VALUES('Pa5','src="./img/produits/patins/patin5.png" alt="Patins motif bleu"',1,'Patins motif bleu',44.99,"patins");
+INSERT INTO users(`user`, `password`, `role`) VALUES ('root','4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2','administrateur');
+INSERT INTO users(`user`, `password`, `role`) VALUES ('theo','e23c3d7ff76f6e6235ce091f2fcd5fd35748677799d1637acf5ba2bca350e258','membre');
+INSERT INTO users(`user`, `password`, `role`) VALUES ('theo2','14f017f3c48290c12ac7049c60e8228960ef81e77dde50e8e972cfe070e2fa4b','membre');
+INSERT INTO users(`user`, `password`, `role`) VALUES ('theo3','2249cf45894e956b4dbb963e4d0361675bfc2efed815d2601a7d3992e01b8f89','membre');
