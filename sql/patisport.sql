@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS `patisport`;
 CREATE DATABASE `patisport`;
+USE `patisport`;
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
