@@ -2,6 +2,9 @@
 <html lang="fr">
     <?php 
         include "./php/header.php";
+        if(isset($_GET["reset"]) && $_GET["reset"] == "true"){
+            $_SESSION["panier"] = array();
+        }
     ?>
     <link rel="stylesheet" href="css/index.css">
 </head>
