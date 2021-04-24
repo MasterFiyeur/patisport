@@ -1,1 +1,5 @@
 Nom fichier : ING1GI1-Dabrowski-Julien.zip
+Vision des stocks de l'admin
+Retirer le fixed de la navbar en version mobile (+display none du menu)
+Enregistrement d'un compte
+Si temps, faire panel admin
