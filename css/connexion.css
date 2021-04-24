@@ -109,3 +109,11 @@
     transform: scale(1.5);
     filter: invert(1);
 }
+
+
+@media screen and (max-width: 685px){
+    .section{
+        margin-top: 0px;
+    }
+
+}

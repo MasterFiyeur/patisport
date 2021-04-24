@@ -19,7 +19,7 @@
                             session_destroy();
                             header("Location: connexion.php");
                         }elseif(isset($_SESSION["user"])){
-                            header("Location: index.php"); 
+                            header("Location: index.php");
                         }elseif(!empty($_POST["username"]) && !empty($_POST["password"])){
                             $authentification = auth($_POST["username"],hash("sha256",$_POST["password"]));
                             if($authentification>0){

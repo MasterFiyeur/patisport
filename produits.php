@@ -17,6 +17,12 @@
             <div class="modal-body">
     <?php
         include "./php/functions.php";
+        $admin = false;
+        if(isset($_SESSION["user"]) && isset($_SESSION["usermdp"])){
+            if(auth($_SESSION["user"],$_SESSION["usermdp"]) == 2){
+                $admin = true;
+            }
+        }
         $categorie = choixCat($categories);
         $produits = getProduits($categorie);
         $showModale = 0;
@@ -107,7 +113,13 @@
                     <?php }
                     ?>
                 </div>
+                <?php
+                    if($admin==true){
+                ?>
                 <button class="btn_stock-switch" onclick="stock_switch()"><img id="toggle_stock" src="./img/produits/show.svg"></button>
+                <?php }else{
+                    echo "<style>.stock{display:none;}</style>";
+                } ?>
             </div>
         </div>
     </main>

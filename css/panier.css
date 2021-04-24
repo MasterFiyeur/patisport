@@ -133,22 +133,22 @@ th:last-child{
 }
 
 @media screen and (max-width: 732px){
-    main{
-        margin-top: 226px;
-    }
     .infoClient button[type=submit]{
         width: 80%;
     }
 }
 
-@media screen and (max-width: 616px){
+@media screen and (max-width: 685px){
     main{
-        margin-top: 264px;
+        margin-top: 0;
+        margin-left: 0;
     }
-}
-
-@media screen and (max-width: 356px){
-    main{
-        margin-top: 302px;
+    .infoClient form{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .infosRecap.row{
+        margin-right: 0;
+        margin-left: 0;
     }
 }

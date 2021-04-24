@@ -166,14 +166,20 @@ footer{
 }
 
 @media screen and (max-width: 685px){
+    .nav_header{
+        position: relative;
+    }
     .nav_header div{
         width: 100%;
         margin-top: 5px;
     }
     .milieu{
-        padding-top: 230px;
+        padding-top: 0;
         flex-direction: column;
         justify-content: center;
+    }
+    .vertical{
+        display: none;
     }
     .content{
         border-top: thin solid aqua!important;
@@ -183,20 +189,10 @@ footer{
 }
 
 @media screen and (max-width: 375px){
-    .milieu{
-        padding-top: 310px;
-    }
-
     footer{
         min-height: 5vh;
         display: flex;
         flex-direction: column-reverse;
     }
 
-}
-
-@media screen and (max-width: 352px){
-    .milieu{
-        padding-top: 330px;
-    }
 }
