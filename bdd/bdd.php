@@ -143,7 +143,7 @@ function getProduit($ref){
 function verificationFinale($panier){
     foreach ($panier as $value){
         $produit = getProduit($value[0]);
-        if(intval($value[1])>intval($produit['stock'])){
+        if(intval($value[1])>intval($produit['stock']) && intval($value[1])>0){
             return false;
         }
     }

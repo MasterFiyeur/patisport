@@ -22,4 +22,4 @@ INSERT INTO produits VALUES('Pa5','src="./img/produits/patins/patin5.png" alt="P
 INSERT INTO users(`user`, `password`, `role`) VALUES ('root','4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2','administrateur');
 INSERT INTO users(`user`, `password`, `role`) VALUES ('theo','e23c3d7ff76f6e6235ce091f2fcd5fd35748677799d1637acf5ba2bca350e258','membre');
 INSERT INTO users(`user`, `password`, `role`) VALUES ('theo2','14f017f3c48290c12ac7049c60e8228960ef81e77dde50e8e972cfe070e2fa4b','membre');
-INSERT INTO users(`user`, `password`, `role`) VALUES ('theo3','2249cf45894e956b4dbb963e4d0361675bfc2efed815d2601a7d3992e01b8f89','membre');
+INSERT INTO users(`user`, `password`, `role`) VALUES ('alan','cdd1afbc1d482b89ee45f21a7f546bf8877df0f2f89935b25bdcac3beccb21cb','membre');

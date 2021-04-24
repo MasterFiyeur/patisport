@@ -33,7 +33,7 @@
         <a href="index.php">Accueil</a>
 
 <?php
-foreach($categories as $value){//Mettre des id
+foreach($categories as $value){
     echo "<a href='produits.php?categorie=".$value["id"]."'>".$value["label"]."</a>";
 } 
 ?>

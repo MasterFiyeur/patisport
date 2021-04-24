@@ -20,65 +20,65 @@ verifCommande();
         <h5>Informations utilisateur</h5>
         <div>
             Prénom :
-            <?php echo $_POST["prenom"] ?>
+            <?php echo htmlspecialchars($_POST["prenom"]); ?>
         </div>
         <div>
             Nom :
-            <?php echo $_POST["nom"] ?>
+            <?php echo htmlspecialchars($_POST["nom"]); ?>
         </div>
         <div>
             E-mail :
-            <?php echo $_POST["mail"] ?>
+            <?php echo htmlspecialchars($_POST["mail"]); ?>
         </div>
         <h5>Adresse de livraison</h5>
         <div>
             Adresse :
-            <?php echo $_POST["adresseLivr"] ?>
+            <?php echo htmlspecialchars($_POST["adresseLivr"]); ?>
         </div>
         <?php 
         if(!(trim($_POST["adresse2Livr"]) == "")){
         ?>
         <div>
             Complément :
-            <?php echo $_POST["adresse2Livr"] ?>
+            <?php echo htmlspecialchars($_POST["adresse2Livr"]); ?>
         </div>
         <?php } ?>
         <div>
             Pays :
-            <?php echo $_POST["paysLivr"] ?>
+            <?php echo htmlspecialchars($_POST["paysLivr"]); ?>
         </div>
         <div>
             Ville :
-            <?php echo $_POST["villeLivr"] ?>
+            <?php echo htmlspecialchars($_POST["villeLivr"]); ?>
         </div>
         <div>
             Code postal :
-            <?php echo $_POST["codeLivr"] ?>
+            <?php echo htmlspecialchars($_POST["codeLivr"]); ?>
         </div>
         <h5>Adresse de facturation</h5>
         <div>
             Adresse :
-            <?php echo $_POST["adresseFact"] ?>
+            <?php echo htmlspecialchars($_POST["adresseFact"]); ?>
         </div>
         <?php 
         if(!(trim($_POST["adresse2Fact"]) == "")){
         ?>
         <div>
             Complément :
-            <?php echo $_POST["adresse2Fact"] ?>
+            <?php echo htmlspecialchars($_POST["adresse2Fact"]); ?>
         </div>
         <?php } ?>
         <div>
             Pays :
-            <?php echo $_POST["paysFact"] ?>
+            <?php echo htmlspecialchars($_POST["paysFact"]); ?>
         </div>
         <div>
             Ville :
-            <?php echo $_POST["villeFact"] ?>
+            <?php echo htmlspecialchars($_POST["villeFact"]); ?>
         </div>
         <div>
             Code postal :
-            <?php echo $_POST["codeFact"] ?>
+            <?php echo htmlspecialchars($_POST["codeFact"]); ?>
         </div>
     </div>
     <div class="col-md-5 infosG">
