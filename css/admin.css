@@ -1,0 +1,42 @@
+.section{
+    margin-top: 148px;
+    min-height: 60.5vh;
+}
+
+.section h4{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.section form .margin-lr{
+    margin: 0 30px;
+}
+
+.section button{
+    margin: 10px;
+}
+.section .btn-close-alert{
+    padding: 20px 0 0 0
+}
+
+.display-none{
+    display: none;
+}
+
+@media screen and (max-width: 884px){
+    .section{
+        margin-top: 188px;
+    }
+    
+    .section form .margin-lr{
+        margin: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 685px){
+    .section{
+        margin-top: 0px;
+    }
+
+}

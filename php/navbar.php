@@ -8,7 +8,11 @@
             Bienvenue dans la boutique Patisport
         </div>
         <div class="nav_buttons">
-<?php if(!isset($_SESSION["user"])){ ?>
+<?php 
+if(isset($_SESSION["user"]) && isset($_SESSION["usermdp"]) && auth($_SESSION["user"],$_SESSION["usermdp"]) == 2){
+    echo '<a href="admin.php">Gestion</a>';
+}
+if(!isset($_SESSION["user"])){ ?>
             <form action="connexion.php">
                 <input type="submit" value="Connexion">
             </form>

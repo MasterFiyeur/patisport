@@ -4,13 +4,23 @@ $cnx="";
 
 function Connexion(){
     include 'bddData.php';
-    $ret;
     try{
         $GLOBALS['cnx'] = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $mdp);
         return true;
     }catch(PDOException $e){
         print "Erreur de connexion PDO";
         return false;
+    }
+}
+
+function ConnexionPDO(){
+    include 'bddData.php';
+    try{
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $mdp);
+        return $pdo;
+    }catch(PDOException $e){
+        print "Erreur de connexion PDO";
+        return null;
     }
 }
 
@@ -167,4 +177,24 @@ function updateStock($ref,$stock){
     }
 }
 
+function getAllProduits(){
+    if (Connexion()==false){
+        echo "Erreur dans la lecture des produits";
+        return NULL;
+    }
+    try{
+        $req = $GLOBALS['cnx'] -> prepare('SELECT * FROM produits ORDER BY label;');
+        $req -> execute();
+        $res = array();
+        foreach ($req as $row) {
+            array_push($res,$row);
+        }
+        Deconnexion();
+        $req = NULL;
+        return $res;
+    }catch (PDOException $e) {
+        print "Erreur !".$e -> getMessage();
+        return NULL;
+    }
+}
 ?>
