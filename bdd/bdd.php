@@ -197,4 +197,75 @@ function getAllProduits(){
         return NULL;
     }
 }
+
+function supprimerProduit($produit){
+    if($produit!=null){
+        /* Suppression de la catégorie si il n'y a plus de produits */
+        try{
+            $PDO = ConnexionPDO();
+            $req = $PDO -> prepare('SELECT COUNT(*) FROM produits WHERE categorie = ?;');
+            $req -> execute(array($produit["categorie"]));
+            Deconnexion();
+            if ($ligne = $req -> fetch()) {
+                if ($ligne != NULL) {
+                    $nombre = $ligne[0];
+                } else {
+                    echo "Erreur lors de la lecture du nombre de produits de la categorie.";
+                }
+            }
+            $req -> closeCursor();
+        }catch (PDOException $e) {
+            print "Erreur, ".$e -> getMessage();
+        }
+        if($nombre<2){
+            try{
+                $req = $PDO -> prepare('DELETE FROM categories WHERE categorie = ?;');
+                $req -> execute(array($produit["categorie"]));
+                Deconnexion();
+                $req -> closeCursor();
+            }catch (PDOException $e) {
+                print "Erreur, ".$e -> getMessage();
+            }
+        }
+        try{
+            $req = $PDO -> prepare('DELETE FROM produits WHERE ref = ?;');
+            $req -> execute(array($_POST["ref"]));
+            Deconnexion();
+            $req = NULL;
+            echo "ok";
+        }catch (PDOException $e) {
+            print "Erreur, ".$e -> getMessage();
+        }
+    }else{
+        echo "Erreur, la réference n'existe pas.";
+    }
+}
+
+function updateProduit(){
+    $produit = getProduit($_POST["ref"]);
+    $cats = getCategories();
+    $catExist = false;
+    foreach ($cats as $value) {
+        if($value["categorie"] == $_POST["categorie"]){$catExist = true;}
+    }
+    if($catExist){
+        if($produit!=null){
+            $image = 'src="'.$_POST["img"].'" alt="'.$_POST["label"].'"';
+            try{
+                $PDO = ConnexionPDO();
+                $req = $PDO -> prepare('UPDATE produits SET img = ?, stock = ?, label = ?, prix = ?, categorie = ? WHERE ref = ?;');
+                $req -> execute(array($image,intval($_POST["stock"]),$_POST["label"],floatval($_POST["prix"]),$_POST["categorie"],$_POST["ref"]));
+                Deconnexion();
+                $req = NULL;
+                echo "ok";
+            }catch (PDOException $e) {
+                print "Erreur, ".$e -> getMessage();
+            }
+        }else{
+            echo "Erreur, la réference n'existe pas.";
+        }
+    }else{
+        echo "Erreur, la catégorie n'existe pas.";
+    }
+}
 ?>

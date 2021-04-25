@@ -44,24 +44,24 @@
         <div class="modal-body" id="delModalBody">
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label for="label" class="form-label">Label</label>
-                    <input type="text" class="form-control" id="label" <?php echo "value='".$produit["label"]."'"; ?> >
+                    <label for="Mlabel" class="form-label">Label</label>
+                    <input type="text" class="form-control" maxlength="50" id="Mlabel" <?php echo "value='".$produit["label"]."'"; ?> >
                 </div>
                 <div class="col-md-3">
-                    <label for="prix" class="form-label">Prix</label>
-                    <input type="number" step="any" min="0" class="form-control" id="prix" <?php echo "value='".$produit["prix"]."'"; ?> >
+                    <label for="Mprix" class="form-label">Prix</label>
+                    <input type="text" step="any" class="form-control" id="Mprix" <?php echo "value='".$produit["prix"]."'"; ?> >
                 </div>
                 <div class="col-md-3">
-                    <label for="stock" class="form-label">Stock</label>
-                    <input type="number" min="0" class="form-control" id="stock" <?php echo "value='".$produit["stock"]."'"; ?> >
+                    <label for="Mstock" class="form-label">Stock</label>
+                    <input type="number" min="0" class="form-control" id="Mstock" <?php echo "value='".$produit["stock"]."'"; ?> >
                 </div>
                 <div class="col-6">
-                    <label for="image" class="form-label">Source de l'image (./img/***)</label>
-                    <input type="text" class="form-control" id="image" <?php echo "value='".$produit["img"]."'"; ?> >
+                    <label for="Mimage" class="form-label">Source de l'image (./img/***)</label>
+                    <input type="text" class="form-control" id="Mimage" maxlength="50" <?php echo "value='".$produit["img"]."'"; ?> >
                 </div>
                 <div class="col-6">
-                    <label for="categorie" class="form-label">Catégorie</label>
-                    <select class="form-select" id=categorie>
+                    <label for="Mcategorie" class="form-label">Catégorie</label>
+                    <select class="form-select" id="Mcategorie">
                         <?php
                             $categories = getCategories();
                             foreach ($categories as $value) {

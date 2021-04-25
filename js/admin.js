@@ -44,10 +44,35 @@ function deleteProduit(){
 }
 
 function modifyProduit(){
-    console.log("modified");
     var myModal = new bootstrap.Modal(document.getElementById('patienter'),{backdrop:'static'});
     myModal.toggle();
-    location.replace("admin.php?success=true");
+    const params = new URLSearchParams();
+    params.append('user', user);
+    params.append('mdp', pass);
+    params.append('ref', document.getElementById("refProduit").value);
+    params.append('label', document.getElementById("Mlabel").value);
+    params.append('prix', document.getElementById("Mprix").value);
+    params.append('stock', document.getElementById("Mstock").value);
+    params.append('img', document.getElementById("Mimage").value);
+    params.append('categorie', document.getElementById("Mcategorie").value);
+    axios({
+        method: 'post',
+        url: './api/modifyProduit.php',
+        data: params
+    })
+      .then(function (response){
+        console.log(response);
+        if(response.data=="ok"){
+            location.replace("admin.php?success=true");
+        }else{
+            location.replace("admin.php?success=false");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+        location.replace("admin.php?success=false");
+      });
+
 }
 
 function toggleCatNewOld(){
