@@ -5,7 +5,7 @@ USE `patisport`;
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `categorie` varchar(15) NOT NULL,
+  `categorie` varchar(64) NOT NULL,
   `label` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 );

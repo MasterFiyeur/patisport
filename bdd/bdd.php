@@ -268,4 +268,72 @@ function updateProduit(){
         echo "Erreur, la catégorie n'existe pas.";
     }
 }
+
+function isOnlySimpleChars($string){
+    $alphabet = "abcdefghijklmnopqrstuvwxyz";
+    if(strlen($string)>64){
+        return false;
+    }
+    for ($i=0; $i < strlen($string); $i++) { 
+        if(strpos($alphabet,$string{$i})==false){
+            return false;
+        }
+    }
+    return true;
+}
+
+function defRef($categorie){
+    for ($i=0; $i < 999; $i++) { 
+        $ref = strtoupper($categorie{0}).strval($categorie{1}).strval($i);
+        $resultat = getProduit($ref);
+        if($resultat==NULL){
+            return $ref;
+        }
+    }
+    return null;
+}
+
+function addProduit(){
+    $produit = getProduit($_POST["ref"]);
+    $cats = getCategories();
+    $catExist = false;
+    foreach ($cats as $value) {
+        if($value["categorie"] == $_POST["categorie"]){$catExist = true;}
+    }
+    if(!$catExist){
+        if(!isOnlySimpleChars($_POST["categorie"]) || !isset($_POST["categorie2"]) || trim($_POST["categorie2"])==""){
+            echo "La catégorie à créer n'est pas conforme.";
+            exit();
+        }
+        try{
+            $PDO = ConnexionPDO();
+            $req = $PDO -> prepare('INSERT INTO categories(categorie, label) VALUES(?,?);');
+            $req -> execute(array($_POST["categorie"],$_POST["categorie2"]));  
+            $req -> closeCursor();
+        }catch (PDOException $e) {
+            print "Erreur, ".$e -> getMessage();
+        }
+    }else{
+        $PDO = ConnexionPDO();
+    }
+    if($produit!=null){
+        $image = 'src="'.$_POST["img"].'" alt="'.$_POST["label"].'"';
+        $nouvelleRef = defRef($_POST["categorie"]);
+        if($nouvelleRef == null){
+            echo "Impossible de créer une référence unique.";
+            exit();
+        }
+        try{    
+            $req = $PDO -> prepare('INSERT INTO produits VALUES(?,?,?,?,?,?);');
+            $req -> execute(array($nouvelleRef,$image,intval($_POST["stock"]),$_POST["label"],floatval($_POST["prix"]),$_POST["categorie"]));
+            Deconnexion();
+            $req = NULL;
+            echo "ok";
+        }catch (PDOException $e) {
+            print "Erreur, ".$e -> getMessage();
+        }
+    }else{
+        echo "Erreur, la réference n'existe pas.";
+    }
+}
 ?>

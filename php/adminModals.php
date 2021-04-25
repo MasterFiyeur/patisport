@@ -43,6 +43,7 @@
         </div>
         <div class="modal-body" id="delModalBody">
             <form class="row g-3">
+                <input type="hidden" id="reference" <?php echo "value='".$produit["ref"]."'"; ?>>
                 <div class="col-md-6">
                     <label for="Mlabel" class="form-label">Label</label>
                     <input type="text" class="form-control" maxlength="50" id="Mlabel" <?php echo "value='".$produit["label"]."'"; ?> >
@@ -56,7 +57,7 @@
                     <input type="number" min="0" class="form-control" id="Mstock" <?php echo "value='".$produit["stock"]."'"; ?> >
                 </div>
                 <div class="col-6">
-                    <label for="Mimage" class="form-label">Source de l'image (./img/***)</label>
+                    <label for="Mimage" class="form-label">Source serveur de l'image (./img/***)</label>
                     <input type="text" class="form-control" id="Mimage" maxlength="50" <?php echo "value='".$produit["img"]."'"; ?> >
                 </div>
                 <div class="col-6">
@@ -97,7 +98,7 @@
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="label" class="form-label">Label</label>
-                    <input type="text" class="form-control" id="label" placeholder="Noix de coco">
+                    <input type="text" class="form-control" maxlength="50" id="label" placeholder="Noix de coco">
                 </div>
                 <div class="col-md-3">
                     <label for="prix" class="form-label">Prix</label>
@@ -108,16 +109,16 @@
                     <input type="number" min="0" class="form-control" id="stock" placeholder="15">
                 </div>
                 <div class="col-12">
-                    <label for="image" class="form-label">Source de l'image (./img/***)</label>
-                    <input type="text" class="form-control" id="image" placeholder="./img/produits/lacets/lacet2.png">
+                    <label for="image" class="form-label">Source serveur de l'image (./img/***)</label>
+                    <input type="text" class="form-control" maxlength="50" id="image" placeholder="./img/produits/lacets/lacet2.png">
                 </div>
                 <div class="form-check form-switch col-12 d-flex justify-content-center">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onchange="toggleCatNewOld()">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Nouvelle catégorie</label>
+                    <input class="form-check-input" type="checkbox" id="categorieCheck" onchange="toggleCatNewOld()">
+                    <label class="form-check-label" for="categorieCheck">Nouvelle catégorie</label>
                 </div>
                 <div class="col-12" id="oldCat">
                     <label for="categorie" class="form-label">Catégorie</label>
-                    <select class="form-select" id=categorie>
+                    <select class="form-select" id="categorie">
                         <?php
                             $categories = getCategories();
                             foreach ($categories as $value) {
@@ -126,15 +127,19 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-12 display-none" id="newCat">
+                <div class="col-6 display-none" id="newCat">
                     <label for="categorieNew" class="form-label">Catégorie (sans majuscule ni espace)</label>
-                    <input type="text" class="form-control" id="categorieNew" placeholder="lacets">
+                    <input type="text" class="form-control" maxlength="15" id="categorieNew" placeholder="lacets">
+                </div>
+                <div class="col-6 display-none" id="newCat2">
+                    <label for="categorieNew2" class="form-label">Label de catégorie</label>
+                    <input type="text" class="form-control" maxlength="64" id="categorieNew2" placeholder="Lacets">
                 </div>
                 </form>
             </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary" onclick="modifyProduit()" data-bs-dismiss="modal">Confirmer</button>
+            <button type="button" class="btn btn-primary" onclick="addProduit()" data-bs-dismiss="modal">Confirmer</button>
         </div>
     </div>
   </div>
